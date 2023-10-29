@@ -1,40 +1,62 @@
-# Next.js & NextUI Template
+# Link Management
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+- Live Site URL: - <a href="#" target="_blank" alt="">Live Site</a>
 
-## Technologies Used
+## Table of contents
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## How to Use
+## Overview
 
+### The challenge
 
-### Use the template with create-next-app
+Users should be able to:
 
-To create a new project based on this template using `create-next-app`, run the following command:
+-
+-
 
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
+### Screenshots
 
-### Install dependencies
+_OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
 
-```bash
-npm install
-```
+# Static Preview
 
-### Run the development server
+## My process
 
-```bash
-npm run dev
-```
+### Built with
 
-## License
+- Semantic HTML5 markup
+- Flexbox
+- CSS custom properties
+- CSS Grid
+- CSS Animations
+- Tailwind
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+### What I learned
+
+...
+
+### Continued development
+
+...
+
+### Useful resources
+
+- <a href="https://github.com/amannn/next-intl/blob/main/examples/example" alt="" target="_blank">next-intl - pages router example </a>
+- <a href="https://prettier.io/docs/en/integrating-with-linters.html" alt="" target="_blank"> Prettier Docs - Integrating with Linters</a>
+- <a href="https://nextjs.org/docs/pages/building-your-application/configuring/babel" alt="" target="_blank">Next Docs - Babel</a>
+- <a href="https://styled-components.com/docs/tooling" alt="" target="_blank">Styled components Docs - Babel Plugin</a>
+- <a href="https://github.com/microsoft/TypeScript/issues/52593#issuecomment-1419505081" alt="" target="_blank">Why you shouldn't use \*.d.ts files for types</a>
+
+## Author
+
+- My Portfolio - [portfolio](https://pedro-meuportfolio.netlify.app)
+- Instagram - [@ph_pedrohenrique21](https://www.instagram.com/ph_pedrohenrique21/)
