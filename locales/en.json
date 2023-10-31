@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "options": {
+      "pages": {
+        "home": {
+          "projects": "projects",
+          "profile": "profile",
+          "dashboard": "dashboard",
+          "team": "team",
+          "calendar": "calendar",
+          "settings": "settings",
+          "help": "help",
+          "logout": "logout",
+          "home": "home",
+          "docs": "docs",
+          "pricing": "pricing",
+          "blog": "blog",
+          "about": "about"
+        }
+      }
+    }
+  },
+  "home": {
+    "title": "websites regardless of your design experience."
+  }
+}
