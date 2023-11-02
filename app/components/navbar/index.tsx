@@ -17,6 +17,7 @@ import clsx from "clsx";
 
 import { LocaleSwitch, ThemeSwitch } from "@@/components";
 import {
+  Logo,
   TwitterIcon,
   GithubIcon,
   SearchInput,
