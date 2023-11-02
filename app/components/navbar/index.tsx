@@ -22,7 +22,7 @@ import {
   SearchInput,
 } from "@@/components/widgets";
 
-import { Logo } from "@@/components/widgets/icons";
+import { getTranslationByPathAndKey } from "@@/utils";
 
 import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
@@ -33,10 +33,6 @@ export const Navbar = async ({
   params: { lang: Locale };
 }) => {
   const locale = await getLocale(lang);
-
-  const getTranslationByPathAndKey = (obj: Object, text: string) => {
-    return String(getObjectValueByKey(obj, text));
-  };
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -61,7 +57,10 @@ export const Navbar = async ({
                 color="foreground"
                 href={`${lang}/${href}`}
               >
-                {getTranslatedText(label)}
+                {getTranslationByPathAndKey(
+                  locale.navbar.options.pages.home,
+                  label
+                )}
               </NextLink>
             </NavbarItem>
           ))}
@@ -112,7 +111,10 @@ export const Navbar = async ({
                 href={`${lang}/${href}`}
                 size="lg"
               >
-                {locale.navbar.options.pages.home[label]}
+                {getTranslationByPathAndKey(
+                  locale.navbar.options.pages.home,
+                  label
+                )}
               </Link>
             </NavbarMenuItem>
           ))}
