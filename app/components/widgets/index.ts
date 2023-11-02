@@ -7,3 +7,4 @@ export {
   HeartFilledIcon,
   SearchIcon,
 } from "./icons";
+export { SearchInput } from "./searchInput";

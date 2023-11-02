@@ -7,10 +7,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
 
 import { link as linkStyles } from "@nextui-org/theme";
 
@@ -22,9 +19,8 @@ import { LocaleSwitch, ThemeSwitch } from "@@/components";
 import {
   TwitterIcon,
   GithubIcon,
-  HeartFilledIcon,
-  SearchIcon,
-} from "@@/components/widgets/icons";
+  SearchInput,
+} from "@@/components/widgets";
 
 import { Logo } from "@@/components/widgets/icons";
 
@@ -38,35 +34,9 @@ export const Navbar = async ({
 }) => {
   const locale = await getLocale(lang);
 
-  // Todo: () => make it reusable and move it to an utils folder;
-  const getTranslatedText = (text: string): string => {
-    type homeLocalesTyped = keyof typeof locale.navbar.options.pages.home;
-    const key = text as homeLocalesTyped;
-
-    return locale.navbar.options.pages.home[key];
+  const getTranslationByPathAndKey = (obj: Object, text: string) => {
+    return String(getObjectValueByKey(obj, text));
   };
-
-  // Todo: () => Move to widgets folder
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: "bg-default-100",
-        input: "text-sm",
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="flex-shrink-0 text-base pointer-events-none text-default-400" />
-      }
-      type="search"
-    />
-  );
 
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -112,7 +82,9 @@ export const Navbar = async ({
           <ThemeSwitch />
           <LocaleSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <SearchInput />
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
@@ -124,7 +96,8 @@ export const Navbar = async ({
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
+        <SearchInput />
+
         <div className="flex flex-col gap-2 mx-4 mt-2">
           {siteConfig.navMenuItems.map(({ label, href }, index) => (
             <NavbarMenuItem key={`${label}-${index}`}>
