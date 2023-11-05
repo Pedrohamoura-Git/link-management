@@ -15,12 +15,12 @@ import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { LocaleSwitch, ThemeSwitch } from "@@/components";
 import {
   Logo,
   TwitterIcon,
   GithubIcon,
   SearchInput,
+  LocaleSwitcher,
   ThemeSwitcher,
 } from "@@/components/widgets";
 
@@ -81,6 +81,7 @@ export const Navbar = async ({
           </Link>
 
           <ThemeSwitcher />
+          <LocaleSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <SearchInput />
