@@ -21,6 +21,7 @@ import {
   TwitterIcon,
   GithubIcon,
   SearchInput,
+  ThemeSwitcher,
 } from "@@/components/widgets";
 
 import { getTranslationByPathAndKey } from "@@/utils";
@@ -78,8 +79,8 @@ export const Navbar = async ({
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
             <GithubIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch />
-          <LocaleSwitch />
+
+          <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <SearchInput />
@@ -90,7 +91,7 @@ export const Navbar = async ({
         <Link isExternal href={siteConfig.links.github} aria-label="Github">
           <GithubIcon className="text-default-500" />
         </Link>
-        <ThemeSwitch />
+        <ThemeSwitcher />
         <NavbarMenuToggle />
       </NavbarContent>
 
