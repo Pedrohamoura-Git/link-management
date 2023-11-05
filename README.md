@@ -68,7 +68,8 @@ _OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
 <details>
   <summary>See links</summary>
 
-  - <a href="https://github.com/microsoft/TypeScript/issues/52593#issuecomment-1419505081" alt="" target="_blank">Why you shouldn't use \*.d.ts files for types</a>
+  - <a href="https://nextjs.org/docs/messages/next-router-not-mounted" alt="`NextRouter` was not mounted" target="_blank">`NextRouter` was not mounted</a>
+  - <a href="https://nextjs.org/docs/app/api-reference/functions/use-pathname" alt="`usePathname" target="_blank">usePathname</a>
 
 </details>
 
