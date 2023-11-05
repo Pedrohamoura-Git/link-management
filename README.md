@@ -50,11 +50,16 @@ _OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
 
 ### Useful resources
 
-- <a href="https://github.com/amannn/next-intl/blob/main/examples/example" alt="" target="_blank">next-intl - pages router example </a>
-- <a href="https://prettier.io/docs/en/integrating-with-linters.html" alt="" target="_blank"> Prettier Docs - Integrating with Linters</a>
-- <a href="https://nextjs.org/docs/pages/building-your-application/configuring/babel" alt="" target="_blank">Next Docs - Babel</a>
-- <a href="https://styled-components.com/docs/tooling" alt="" target="_blank">Styled components Docs - Babel Plugin</a>
-- <a href="https://github.com/microsoft/TypeScript/issues/52593#issuecomment-1419505081" alt="" target="_blank">Why you shouldn't use \*.d.ts files for types</a>
+<details>
+  <summary>See links</summary>
+
+  - <a href="https://github.com/amannn/next-intl/blob/main/examples/example" alt="" target="_blank">next-intl - pages router example </a>
+  - <a href="https://prettier.io/docs/en/integrating-with-linters.html" alt="" target="_blank"> Prettier Docs - Integrating with Linters</a>
+  - <a href="https://nextjs.org/docs/pages/building-your-application/configuring/babel" alt="" target="_blank">Next Docs - Babel</a>
+  - <a href="https://styled-components.com/docs/tooling" alt="" target="_blank">Styled components Docs - Babel Plugin</a>
+  - <a href="https://github.com/microsoft/TypeScript/issues/52593#issuecomment-1419505081" alt="" target="_blank">Why you shouldn't use \*.d.ts files for types</a>
+
+</details>
 
 ## Author
 
