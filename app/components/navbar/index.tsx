@@ -44,7 +44,6 @@ export const Navbar = async ({
             href={`${lang}`}
           >
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
           </NextLink>
         </NavbarBrand>
         <ul className="justify-start hidden gap-4 ml-2 lg:flex">
