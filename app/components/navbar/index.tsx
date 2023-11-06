@@ -9,8 +9,6 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
 
-import { link as linkStyles } from "@nextui-org/theme";
-
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
@@ -28,6 +26,7 @@ import { getTranslationByPathAndKey } from "@@/utils";
 
 import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
+import { Button } from "@nextui-org/button";
 
 export const Navbar = async ({
   params: { lang },
@@ -47,25 +46,6 @@ export const Navbar = async ({
             <Logo />
           </NextLink>
         </NavbarBrand>
-        <ul className="justify-start hidden gap-4 ml-2 lg:flex">
-          {siteConfig.navItems.map(({ label, href }) => (
-            <NavbarItem key={href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={`${lang}/${href}`}
-              >
-                {getTranslationByPathAndKey(
-                  locale.navbar.options.pages.home,
-                  label
-                )}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
       </NavbarContent>
 
       <NavbarContent
@@ -73,9 +53,6 @@ export const Navbar = async ({
         justify="end"
       >
         <NavbarItem className="hidden gap-2 sm:flex">
-          <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
             <GithubIcon className="text-default-500" />
           </Link>
@@ -85,6 +62,13 @@ export const Navbar = async ({
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <SearchInput />
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#" size="lg">
+            <Button color="primary" className="capitalize">
+              {locale.auth.options.singIn}
+            </Button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
@@ -99,27 +83,14 @@ export const Navbar = async ({
       <NavbarMenu>
         <SearchInput />
 
-        <div className="flex flex-col gap-2 mx-4 mt-2">
-          {siteConfig.navMenuItems.map(({ label, href }, index) => (
-            <NavbarMenuItem key={`${label}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href={`${lang}/${href}`}
-                size="lg"
-              >
-                {getTranslationByPathAndKey(
-                  locale.navbar.options.pages.home,
-                  label
-                )}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+        <div className="flex flex-col items-center justify-center gap-2 mx-4 mt-2">
+          <NavbarMenuItem>
+            <Link href="#" size="lg" className="mt-10">
+              <Button color="primary" className="capitalize">
+                {locale.auth.options.singIn}
+              </Button>
+            </Link>
+          </NavbarMenuItem>
         </div>
       </NavbarMenu>
     </NextUINavbar>
