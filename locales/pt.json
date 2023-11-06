@@ -1,26 +1,12 @@
 {
-  "navbar": {
+  "auth": {
     "options": {
-      "pages": {
-        "home": {
-          "projects": "projetos",
-          "profile": "perfil",
-          "dashboard": "dashboard",
-          "team": "time",
-          "calendar": "calendario",
-          "settings": "configurações",
-          "help": "ajuda",
-          "logout": "sair",
-          "home": "página principal",
-          "docs": "documentação",
-          "pricing": "preço",
-          "blog": "blog",
-          "about": "sobre"
-        }
-      }
+      "login": "entrar",
+      "logout": "sair ",
+      "singIn": "criar conta"
     }
   },
   "home": {
-    "title": "site independente da sua experiência com design."
+    "title": "websites regardless of your design experience."
   }
 }

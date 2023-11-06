@@ -1,23 +1,9 @@
 {
-  "navbar": {
+  "auth": {
     "options": {
-      "pages": {
-        "home": {
-          "projects": "projects",
-          "profile": "profile",
-          "dashboard": "dashboard",
-          "team": "team",
-          "calendar": "calendar",
-          "settings": "settings",
-          "help": "help",
-          "logout": "logout",
-          "home": "home",
-          "docs": "docs",
-          "pricing": "pricing",
-          "blog": "blog",
-          "about": "about"
-        }
-      }
+      "login": "login",
+      "logout": "logout",
+      "singIn": "sing in"
     }
   },
   "home": {
