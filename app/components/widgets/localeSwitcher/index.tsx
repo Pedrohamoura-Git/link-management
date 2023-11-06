@@ -1,12 +1,34 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 import { i18n } from "@/i18n.config";
 
-export const LocaleSwitcher = () => {
+import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
+import { Select, SelectItem } from "@nextui-org/react";
+
+// Todo: () => Create a file for this custom hook
+const useCurrentLang = () => {
   const pathName = usePathname();
+
+  return pathName.split("/")[1];
+};
+
+const changeLanguage = (lang: any) => {
+  console.log("lang: ", lang);
+
+  // router.push(redirectedPathName(lang));
+};
+
+export const LocaleSwitcher = () => {
+  const currentLang = useCurrentLang();
+  const pathName = usePathname();
+  const router = useRouter();
+
+  const formattedLanguages = i18n.locales.map((lang) => ({
+    value: lang,
+    label: lang,
+  }));
 
   const redirectedPathName = (locale: string) => {
     if (!pathName) return "/";
@@ -15,20 +37,21 @@ export const LocaleSwitcher = () => {
     return segments.join("/");
   };
 
+  // Todo: () => Change route using changeLanguage();
+  // Todo: () => Reduce select height;
   return (
-    <ul className="flex gap-x-3">
-      {i18n.locales.map((locale) => {
-        return (
-          <li key={locale}>
-            <Link
-              href={redirectedPathName(locale)}
-              className="px-3 py-2 text-white bg-black border rounded-md"
-            >
-              {locale}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <Select
+        defaultSelectedKeys={[currentLang]}
+        className="w-16"
+        onSelectionChange={(e) => changeLanguage(e)}
+      >
+        {formattedLanguages.map((lang) => (
+          <SelectItem key={lang.value} value={lang.value}>
+            {lang.label}
+          </SelectItem>
+        ))}
+      </Select>
+    </>
   );
 };
