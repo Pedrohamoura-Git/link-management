@@ -61,13 +61,13 @@ export const Logo: React.FC<IconSvgProps> = ({
           y2="30.7836"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.00558659" stop-color="#00B2FF" />
-          <stop offset="0.2585" stop-color="#00AFFF" />
-          <stop offset="0.4436" stop-color="#00A6FF" />
-          <stop offset="0.6072" stop-color="#0096FF" />
-          <stop offset="0.7581" stop-color="#007FFF" />
-          <stop offset="0.8992" stop-color="#0063FF" />
-          <stop offset="1" stop-color="#0049FF" />
+          <stop offset="0.00558659" stopColor="#00B2FF" />
+          <stop offset="0.2585" stopColor="#00AFFF" />
+          <stop offset="0.4436" stopColor="#00A6FF" />
+          <stop offset="0.6072" stopColor="#0096FF" />
+          <stop offset="0.7581" stopColor="#007FFF" />
+          <stop offset="0.8992" stopColor="#0063FF" />
+          <stop offset="1" stopColor="#0049FF" />
         </linearGradient>
       </defs>
     </svg>
