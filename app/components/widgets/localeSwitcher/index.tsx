@@ -2,7 +2,6 @@
 
 import { i18n } from "@/i18n.config";
 
-import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 import { Select, SelectItem } from "@nextui-org/react";
@@ -34,24 +33,30 @@ export const LocaleSwitcher = () => {
     if (!pathName) return "/";
     const segments = pathName.split("/");
     segments[1] = locale;
+
     return segments.join("/");
   };
 
   // Todo: () => Change route using changeLanguage();
   // Todo: () => Reduce select height;
   return (
-    <>
-      <Select
-        defaultSelectedKeys={[currentLang]}
-        className="w-16"
-        onSelectionChange={(e) => changeLanguage(e)}
-      >
-        {formattedLanguages.map((lang) => (
-          <SelectItem key={lang.value} value={lang.value}>
-            {lang.label}
-          </SelectItem>
-        ))}
-      </Select>
-    </>
+    <Select
+      defaultSelectedKeys={[currentLang]}
+      className="w-20"
+      classNames={{
+        mainWrapper: "h-8",
+      }}
+    >
+      {formattedLanguages.map(({ value, label }) => (
+        <SelectItem key={value} value={value}>
+          <button
+            type="button"
+            onClick={() => router.replace(redirectedPathName(label))}
+          >
+            {label}
+          </button>
+        </SelectItem>
+      ))}
+    </Select>
   );
 };
