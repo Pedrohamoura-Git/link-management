@@ -13,12 +13,6 @@ const useCurrentLang = () => {
   return pathName.split("/")[1];
 };
 
-const changeLanguage = (lang: any) => {
-  console.log("lang: ", lang);
-
-  // router.push(redirectedPathName(lang));
-};
-
 export const LocaleSwitcher = () => {
   const currentLang = useCurrentLang();
   const pathName = usePathname();
