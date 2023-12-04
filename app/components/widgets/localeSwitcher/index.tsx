@@ -1,9 +1,7 @@
 "use client";
 
 import { i18n } from "@/i18n.config";
-
 import { usePathname, useRouter } from "next/navigation";
-
 import { Select, SelectItem } from "@nextui-org/react";
 
 // Todo: () => Create a file for this custom hook
