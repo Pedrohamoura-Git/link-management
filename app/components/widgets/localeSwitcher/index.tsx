@@ -23,6 +23,10 @@ export const LocaleSwitcher = () => {
     label: locale,
   }));
 
+  const changeLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    router.replace(redirectedPathName(e.target.value));
+  };
+
   const redirectedPathName = (locale: string) => {
     if (!pathName) return "/";
     const segments = pathName.split("/");
@@ -31,15 +35,15 @@ export const LocaleSwitcher = () => {
     return segments.join("/");
   };
 
-  // Todo: () => Change route using changeLanguage();
-  // Todo: () => Reduce select height;
   return (
     <Select
-      defaultSelectedKeys={[currentLang]}
+      items={formattedLocales}
+      selectedKeys={[currentLocale]}
       className="w-20"
       classNames={{
         mainWrapper: "h-8",
       }}
+      onChange={changeLocale}
     >
       {({ value, label }) => (
         <SelectItem key={value} value={value}>
