@@ -41,16 +41,11 @@ export const LocaleSwitcher = () => {
         mainWrapper: "h-8",
       }}
     >
-      {formattedLanguages.map(({ value, label }) => (
+      {({ value, label }) => (
         <SelectItem key={value} value={value}>
-          <button
-            type="button"
-            onClick={() => router.replace(redirectedPathName(label))}
-          >
-            {label}
-          </button>
+          {label}
         </SelectItem>
-      ))}
+      )}
     </Select>
   );
 };
