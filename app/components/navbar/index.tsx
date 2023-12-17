@@ -7,7 +7,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
+import { Link } from "@/lib/nextUI";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
