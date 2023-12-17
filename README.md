@@ -55,6 +55,8 @@ _OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
   <summary>See links</summary>
 
   - <a href="https://www.lukew.com/ff/entry.asp?1927&" alt="Designing for Large Screen Smartphones" target="_blank">Designing for Large Screen Smartphones</a>
+  - <a href="https://www.youtube.com/watch?v=gpJKj45AikY" alt="Youtube video: Next.js Image Optimization with Image Component" target="_blank">Next.js Image Optimization with Image Component</a>
+  - <a href="https://ausi.github.io/respimagelint/" alt="A link to a image formater for NextJs" target="_blank">RespImageLint - Linter for Responsive Images</a>
 
 </details>
 
