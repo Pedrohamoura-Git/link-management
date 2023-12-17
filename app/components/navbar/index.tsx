@@ -11,18 +11,14 @@ import { Link } from "@/lib/nextUI";
 
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
-import clsx from "clsx";
 
 import {
   Logo,
-  TwitterIcon,
   GithubIcon,
   SearchInput,
   LocaleSwitcher,
   ThemeSwitcher,
 } from "@@/components/widgets";
-
-import { getTranslationByPathAndKey } from "@@/utils";
 
 import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
