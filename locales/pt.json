@@ -7,6 +7,15 @@
     }
   },
   "home": {
-    "title": "websites regardless of your design experience."
+    "hero": {
+      "title": "Compartilhe mais com seu link na bio!",
+      "description": "Conecte todo seu conteúdo ao público com apenas um link. Perfeito para a biografia da sua rede social.",
+      "cta": {
+        "try_now": "Comece agora, é grátis!"
+      }
+    }
+  },
+  "about": {
+    "title": "sobre"
   }
 }

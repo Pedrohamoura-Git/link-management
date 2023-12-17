@@ -1,14 +1,10 @@
-import NextLink from "next/link";
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
 import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
-import { siteConfig } from "@/config/site";
 
-import { title, subtitle } from "@@/components/primitives";
-import { GithubIcon } from "@@/components/widgets/icons";
+import Image from "next/image";
+import { Button, Link } from "@/lib/nextUI";
+
+import headerImage from "@/public/images/home/header.png";
 
 export default async function Home({
   params: { lang },
@@ -18,48 +14,28 @@ export default async function Home({
   const locale = await getLocale(lang);
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="justify-center inline-block max-w-lg text-center">
-        <h1 className={title()}>Make&nbsp;</h1>
-        <h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-        <br />
-        <h1 className={title()}>{locale.home.title}</h1>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </h2>
-      </div>
+    <main className="flex flex-col items-center justify-center py-8 md:py-10">
+      <section className="flex flex-col items-center justify-center gap-4 ">
+        <Image
+          src={headerImage}
+          alt="Image of a smartphone with links to share"
+        />
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          as={NextLink}
-          href={siteConfig.links.docs}
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          as={NextLink}
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
+        <h1 className="text-4xl text-center">{locale.home.hero.title}</h1>
 
-      <div className="mt-8">
-        <Snippet hideSymbol hideCopyButton variant="flat">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div>
-    </section>
+        <p className="px-2 text-center">{locale.home.hero.description}</p>
+
+        <Button
+          className="text-1xl p-7"
+          href={`/${lang}`}
+          as={Link}
+          color="primary"
+          showAnchorIcon
+          variant="solid"
+        >
+          {locale.home.hero.cta.try_now}
+        </Button>
+      </section>
+    </main>
   );
 }
