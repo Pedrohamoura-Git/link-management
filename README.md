@@ -68,6 +68,7 @@ _OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
 
   - <a href="https://nextjs.org/docs/messages/next-router-not-mounted" alt="`NextRouter` was not mounted" target="_blank">`NextRouter` was not mounted</a>
   - <a href="https://nextjs.org/docs/app/api-reference/functions/use-pathname" alt="`usePathname" target="_blank">usePathname</a>
+  - <a href="https://stackoverflow.com/questions/76181096/typeerror-createcontext-only-works-in-client-components-add-the-use-client-d/76181667#76181667" alt="How to use nextUI on server components" target="_blank">How to use nextUI on server components</a>
 
 </details>
 
