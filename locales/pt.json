@@ -18,6 +18,9 @@
       "title": "Gerenciamento simples",
       "description": "Criar um link leva segundos. Escolha um tipo, preencha os dados e seu link já estará funcionando. Use nosso editor de arrastar e soltar para organizar seu conteúdo."
     },
+    "features": {
+      "title": "Use onde quiser",
+      "description": "Cada link que você criar terá um endereço e QR Code únicos que podem ser acessados diretamente. Por exemplo, você pode ler o QR Code ou acessar um de nossos links para se cadastrar: "
     }
   },
   "about": {
