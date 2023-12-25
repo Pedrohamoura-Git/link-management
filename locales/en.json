@@ -1,9 +1,9 @@
 {
   "auth": {
     "options": {
-      "login": "login",
-      "logout": "logout",
-      "singIn": "sing in"
+      "login": "Login",
+      "logout": "Logout",
+      "sing_up": "Sing up"
     }
   },
   "home": {

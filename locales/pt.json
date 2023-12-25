@@ -1,9 +1,9 @@
 {
   "auth": {
     "options": {
-      "login": "entrar",
-      "logout": "sair ",
-      "singIn": "criar conta"
+      "login": "Entrar",
+      "logout": "Sair ",
+      "sing_up": "Criar conta"
     }
   },
   "home": {
