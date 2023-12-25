@@ -61,6 +61,9 @@ export const siteConfig = {
   ],
 
   links: {
+    auth: {
+      signUp: "https://cadastrar.linka.ai",
+    },
     github: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",
     docs: "https://nextui.org",

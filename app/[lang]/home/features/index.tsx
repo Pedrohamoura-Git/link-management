@@ -2,6 +2,7 @@
 
 import { section } from "@/styles";
 import { useCurrentLocale } from "@/app/utils/custom-hooks";
+import { siteConfig } from "@/config/site";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -92,7 +93,7 @@ export const Features = ({ locale }: featuresProps) => {
 
         <Link
           className="px-2 text-center text-primary"
-          href={`/${currentLang}`}
+          href={`/${siteConfig.links.auth.signUp}`}
         >
           {locale.auth.options.sign_up}
         </Link>
