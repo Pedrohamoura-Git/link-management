@@ -1,7 +1,7 @@
 export { LogoStandard } from "./brand/logos/standard";
 export { Logo } from "./logo";
 
-export { TwitterIcon } from "./twitter";
+export { TwitterIcon } from "./social-media/twitter";
 export { GithubIcon } from "./social-media/github";
 
 export { MoonFilledIcon } from "./moonFilled";
