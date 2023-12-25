@@ -1,0 +1,33 @@
+import { section } from "@/styles";
+
+import Image from "next/image";
+
+import dragAndDropImage from "@/public/images/home/drag-and-drop.svg";
+
+type howItWorksProps = {
+  locale: {
+    how_it_works: {
+      title: string;
+      description: string;
+    };
+  };
+};
+
+export const HowItWorks = ({ locale }: howItWorksProps) => {
+  return (
+    <section className={`${section}`}>
+      <div className="flex flex-col items-center justify-center gap-6">
+        <Image
+          src={dragAndDropImage}
+          alt="Image of a smartphone with links to share"
+        />
+
+        <h2 className="text-4xl text-center">{locale.how_it_works.title}</h2>
+
+        <p className="px-2 text-center">{locale.how_it_works.description}</p>
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorks;

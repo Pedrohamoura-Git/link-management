@@ -13,6 +13,11 @@
       "cta": {
         "try_now": "Comece agora, é grátis!"
       }
+    },
+    "how_it_works": {
+      "title": "Gerenciamento simples",
+      "description": "Criar um link leva segundos. Escolha um tipo, preencha os dados e seu link já estará funcionando. Use nosso editor de arrastar e soltar para organizar seu conteúdo."
+    },
     }
   },
   "about": {

@@ -13,6 +13,11 @@
       "cta": {
         "try_now": "Try now, it's free!"
       }
+    },
+    "how_it_works": {
+      "title": "Easy to manage",
+      "description": "Create a link takes seconds. Choose a type, add your information and your link will be ready. Use our drag-and-drop editor to organize your content."
+    },
     }
   },
   "about": {
