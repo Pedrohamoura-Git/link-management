@@ -48,10 +48,6 @@ export const Navbar = async ({
         justify="end"
       >
         <NavbarItem className="hidden gap-2 sm:flex">
-          <Link isExternal href={siteConfig.links.github} aria-label="Github">
-            <GithubIcon className="text-default-500" />
-          </Link>
-
           <ThemeSwitcher />
           <LocaleSwitcher />
         </NavbarItem>
@@ -67,10 +63,10 @@ export const Navbar = async ({
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="pl-4 sm:hidden basis-1" justify="end">
-        <Link isExternal href={siteConfig.links.github} aria-label="Github">
-          <GithubIcon className="text-default-500" />
-        </Link>
+      <NavbarContent
+        className="items-center pl-4 sm:hidden basis-1 sm:outline-1 sm:outline-white"
+        justify="end"
+      >
         <LocaleSwitcher />
         <ThemeSwitcher />
         <NavbarMenuToggle />
