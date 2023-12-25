@@ -1,5 +1,5 @@
 export {
-  Logo,
+  LogoStandard,
   TwitterIcon,
   GithubIcon,
   MoonFilledIcon,
