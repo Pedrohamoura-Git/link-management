@@ -13,8 +13,7 @@ import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 
 import {
-  Logo,
-  GithubIcon,
+  LogoStandard,
   SearchInput,
   LocaleSwitcher,
   ThemeSwitcher,
@@ -39,7 +38,7 @@ export const Navbar = async ({
             className="flex items-center justify-start gap-1"
             href={`${lang}`}
           >
-            <Logo />
+            <LogoStandard />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
