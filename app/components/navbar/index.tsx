@@ -9,7 +9,6 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "@/lib/nextUI";
 
-import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 
 import {
