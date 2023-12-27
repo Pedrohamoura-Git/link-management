@@ -21,6 +21,9 @@
     "features": {
       "title": "Use onde quiser",
       "description": "Cada link que você criar terá um endereço e QR Code únicos que podem ser acessados diretamente. Por exemplo, você pode ler o QR Code ou acessar um de nossos links para se cadastrar: "
+    },
+    "footer": {
+      "all_rights_reserved": "Linka.ai - Todos os direitos reservados ©"
     }
   },
   "about": {

@@ -21,6 +21,9 @@
     "features": {
       "title": "Use Everywhere",
       "description": "With every link you gain an unique QR Code. For example, you can scan the QR Code above or access this link to sign up: "
+    },
+    "footer": {
+      "all_rights_reserved": "Linka.ai - All rights reserved ©"
     }
   },
   "about": {
