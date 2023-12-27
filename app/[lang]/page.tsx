@@ -1,7 +1,7 @@
 import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
 
-import { Hero, HowItWorks, Features } from "./home";
+import { Hero, HowItWorks, Features, Footer } from "./home";
 
 export default async function Home({
   params: { lang },
@@ -17,6 +17,7 @@ export default async function Home({
     features: locale.home.features,
     auth: { options: { sign_up: locale.auth.options.sing_up } },
   };
+  const footerLocale = { footer: locale.home.footer };
 
   return (
     <div className="flex flex-col items-center justify-center py-8 md:py-10">
@@ -26,6 +27,7 @@ export default async function Home({
 
       <Features locale={featuresLocale} />
 
+      <Footer locale={footerLocale} />
     </div>
   );
 }
