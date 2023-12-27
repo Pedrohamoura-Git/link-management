@@ -56,7 +56,7 @@ export const Navbar = async ({
         <NavbarItem className="hidden lg:flex">
           <Link href="#" size="lg">
             <Button color="primary" className="capitalize">
-              {locale.auth.options.singIn}
+              {locale.auth.options.sing_up}
             </Button>
           </Link>
         </NavbarItem>
@@ -78,7 +78,7 @@ export const Navbar = async ({
           <NavbarMenuItem>
             <Link href="#" size="lg" className="mt-10">
               <Button color="primary" className="capitalize">
-                {locale.auth.options.singIn}
+                {locale.auth.options.sing_up}
               </Button>
             </Link>
           </NavbarMenuItem>
