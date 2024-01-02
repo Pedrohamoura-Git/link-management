@@ -1,1 +1,1 @@
-export const section = `mt-5 mb-14`;
+export const section = `my-16 first:mt-8`;
