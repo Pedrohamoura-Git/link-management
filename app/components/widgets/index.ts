@@ -6,6 +6,7 @@ export {
   SunFilledIcon,
   HeartFilledIcon,
   SearchIcon,
+  GridTemplateIcons,
 } from "./icons";
 
 export { SearchInput } from "./searchInput";

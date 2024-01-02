@@ -7,8 +7,8 @@ import { siteConfig } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { GridTemplateIcons } from "@@/components/widgets";
 
-import socialMediaIcons from "@/public/images/home/social-icons.svg";
 import qrCode from "@/public/images/home/qr-code.png";
 
 type featuresProps = {
@@ -53,10 +53,7 @@ export const Features = ({ locale }: featuresProps) => {
       <div
         className={`${section} flex flex-col items-center justify-center gap-6`}
       >
-        <Image
-          src={socialMediaIcons}
-          alt="Multiple icons of different social medias"
-        />
+        <GridTemplateIcons />
 
         <h2 className="text-4xl text-center">{locale.features.title}</h2>
 
