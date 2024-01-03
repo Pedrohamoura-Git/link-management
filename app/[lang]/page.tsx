@@ -15,7 +15,11 @@ export default async function Home({
   const howItWoksLocale = { how_it_works: locale.home.how_it_works };
   const featuresLocale = {
     features: locale.home.features,
-    auth: { options: { sign_up: locale.auth.options.sing_up } },
+    auth: {
+      options: {
+        sign_up_template_link: locale.auth.options.sign_up_template_link,
+      },
+    },
   };
   const footerLocale = { footer: locale.home.footer };
 

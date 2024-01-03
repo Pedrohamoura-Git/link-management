@@ -22,9 +22,13 @@ export const HowItWorks = ({ locale }: howItWorksProps) => {
           alt="Image of a smartphone with links to share"
         />
 
-        <h2 className="text-4xl text-center">{locale.how_it_works.title}</h2>
+          <h2 className="text-4xl text-center lg:text-left">
+            {locale.how_it_works.title}
+          </h2>
 
-        <p className="px-2 text-center">{locale.how_it_works.description}</p>
+          <p className={`${home.section.description}`}>
+            {locale.how_it_works.description}
+          </p>
       </div>
     </section>
   );

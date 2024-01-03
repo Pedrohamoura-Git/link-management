@@ -3,7 +3,8 @@
     "options": {
       "login": "Login",
       "logout": "Logout",
-      "sing_up": "Sing up"
+      "sing_up": "Sing up",
+      "sign_up_template_link": "singup.linka.ai"
     }
   },
   "home": {

@@ -19,7 +19,7 @@ type featuresProps = {
     };
     auth: {
       options: {
-        sign_up: string;
+        sign_up_template_link: string;
       };
     };
   };
@@ -88,14 +88,7 @@ export const Features = ({ locale }: featuresProps) => {
 
         <p className="px-2 text-center">{locale.features.description}</p>
 
-        <Link
-          className="px-2 text-center text-primary"
-          href={`/${siteConfig.links.auth.signUp}`}
-        >
-          {locale.auth.options.sign_up}
-        </Link>
-      </div>
-    </section>
+            {locale.auth.options.sign_up_template_link}
   );
 };
 

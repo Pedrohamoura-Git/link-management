@@ -3,7 +3,8 @@
     "options": {
       "login": "Entrar",
       "logout": "Sair ",
-      "sing_up": "Criar conta"
+      "sing_up": "Criar conta",
+      "sign_up_template_link": "cadastrar.linka.ai"
     }
   },
   "home": {
