@@ -18,25 +18,27 @@ type heroProps = {
 
 export const Hero = ({ lang, heroLocale }: heroProps) => {
   return (
-    <section className={`${section}`}>
-      <div className="flex flex-col items-center justify-center gap-6 md:flex-row-reverse md:justify-around">
+    <section className={`${home.section.base}`}>
+      <div
+        className={`${flexColCenter} lg:flex-row-reverse lg:justify-between gap-6`}
+      >
         <Image
-          className="md:basis-96"
+          className={`${home.section.image} lg:basis-1/2`}
           src={headerImage}
           alt="Image of a smartphone with links to share"
         />
 
-        <div className="flex flex-col items-center justify-center gap-6 md:basis-1/3 md:items-start">
-          <h1 className="text-4xl text-center md:text-left">
+        <div className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}>
+          <h1 className={`${home.section.title} lg:text-5xl`}>
             {heroLocale.hero.title}
           </h1>
 
-          <p className="px-2 text-center md:text-xl md:text-left">
+          <p className={`${home.section.description}`}>
             {heroLocale.hero.description}
           </p>
 
           <Button
-            className="text-1xl p-7"
+            className="text-1xl p-7 lg:font-bold"
             href={`/${lang}`}
             as={Link}
             color="primary"

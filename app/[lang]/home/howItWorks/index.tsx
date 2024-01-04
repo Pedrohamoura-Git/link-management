@@ -1,8 +1,6 @@
 import { home, flexColCenter } from "@/styles";
 
-import Image from "next/image";
-
-import dragAndDropImage from "@/public/images/home/drag-and-drop.svg";
+import { DragAndDropIcons } from "@@/components/widgets";
 
 type howItWorksProps = {
   locale: {
@@ -15,20 +13,19 @@ type howItWorksProps = {
 
 export const HowItWorks = ({ locale }: howItWorksProps) => {
   return (
-    <section className={`${section}`}>
-      <div className="flex flex-col items-center justify-center gap-6">
-        <Image
-          src={dragAndDropImage}
-          alt="Image of a smartphone with links to share"
-        />
+    <section className={`${home.section.base}`}>
+      <div className={`${flexColCenter} gap-6 lg:flex-row lg:justify-between`}>
+        <DragAndDropIcons className={`${home.section.image} lg:basis-2/5`} />
 
-          <h2 className="text-4xl text-center lg:text-left">
+        <div className={`${flexColCenter} gap-6 lg:basis-1/2 lg:items-start`}>
+          <h2 className={`${home.section.title}`}>
             {locale.how_it_works.title}
           </h2>
 
           <p className={`${home.section.description}`}>
             {locale.how_it_works.description}
           </p>
+        </div>
       </div>
     </section>
   );

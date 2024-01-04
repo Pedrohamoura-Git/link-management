@@ -49,46 +49,63 @@ export const Features = ({ locale }: featuresProps) => {
   const currentLang = useCurrentLocale();
 
   return (
-    <section>
-      <div
-        className={`${section} flex flex-col items-center justify-center gap-6`}
-      >
-        <GridTemplateIcons />
+    <>
+      <section className={`${home.section.base}`}>
+        <div
+          className={`${flexColCenter} gap-6 lg:flex-row-reverse lg:justify-between`}
+        >
+          <GridTemplateIcons className={`${home.section.image} lg:basis-2/5`} />
 
-        <h2 className="text-4xl text-center">{locale.features.title}</h2>
+          <div className={`${flexColCenter} gap-6 lg:items-start lg:basis-2/5`}>
+            <h2 className={`${home.section.title}`}>{locale.features.title}</h2>
 
-        <p className="px-2 text-center">{locale.features.description}</p>
+            <p className={`${home.section.description}`}>
+              {locale.features.description}
+            </p>
 
-        <p className="px-2 text-center">
-          <span>lika.ai/</span>
+            <p className={`${home.section.description}`}>
+              <span>lika.ai/</span>
 
-          <TypeAnimation
-            sequence={textSequence[currentLang]}
-            wrapper="span"
-            speed={15}
-            style={{
-              fontSize: "1rem",
-              display: "inline-block",
-            }}
-            className="text-primary"
-            repeat={Infinity}
+              <TypeAnimation
+                sequence={textSequence[currentLang]}
+                wrapper="span"
+                speed={15}
+                className="text-green-600"
+                repeat={Infinity}
+              />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${home.section.base}`}>
+        <div
+          className={`${flexColCenter} gap-6 lg:flex-row lg:justify-between`}
+        >
+          <Image
+            className={`${home.section.image} lg:basis-1/3`}
+            src={qrCode}
+            style={{ backgroundColor: `white` }}
+            alt="A QR Code that can be used to access the sign in page"
           />
-        </p>
-      </div>
 
-      <div
-        className={`${section} flex flex-col items-center justify-center gap-6`}
-      >
-        <Image
-          src={qrCode}
-          alt="A QR Code that can be used to access the sign in page"
-        />
+          <div className={`${flexColCenter} gap-6 lg:items-start lg:basis-1/2`}>
+            <h2 className={`${home.section.title}`}>{locale.features.title}</h2>
 
-        <h2 className="text-4xl text-center">{locale.features.title}</h2>
+            <p className={`${home.section.description}`}>
+              <span>{locale.features.description}</span>
 
-        <p className="px-2 text-center">{locale.features.description}</p>
-
-            {locale.auth.options.sign_up_template_link}
+              <Link
+                className="ml-1 text-center text-primary"
+                href={`/${siteConfig.links.auth.signUp}`}
+              >
+                {locale.auth.options.sign_up_template_link}
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
