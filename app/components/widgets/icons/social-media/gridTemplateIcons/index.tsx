@@ -8,9 +8,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
     x={0}
     y={0}
     viewBox="0 0 553.5 450"
-    style={{
-      enableBackground: "new 0 0 553.5 450",
-    }}
     xmlSpace="preserve"
     {...props}
   >
@@ -66,15 +63,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={93.6}
-      cy={249.3}
-      r={67.1}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_1_)",
-      }}
-    />
     <linearGradient
       id="SVGID_2_"
       gradientUnits="userSpaceOnUse"
@@ -156,15 +144,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={361.4}
-      cy={117.5}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_3_)",
-      }}
-    />
     <linearGradient
       id="SVGID_4_"
       gradientUnits="userSpaceOnUse"
@@ -246,15 +225,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={361.4}
-      cy={249.3}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_5_)",
-      }}
-    />
     <linearGradient
       id="SVGID_6_"
       gradientUnits="userSpaceOnUse"
@@ -340,15 +310,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={227.5}
-      cy={249.3}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_7_)",
-      }}
-    />
     <linearGradient
       id="SVGID_8_"
       gradientUnits="userSpaceOnUse"
@@ -430,15 +391,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={227.5}
-      cy={117.5}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_9_)",
-      }}
-    />
     <linearGradient
       id="SVGID_10_"
       gradientUnits="userSpaceOnUse"
@@ -548,15 +500,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={78}
-      cy={112.7}
-      r={67.1}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_11_)",
-      }}
-    />
     <linearGradient
       id="SVGID_12_"
       gradientUnits="userSpaceOnUse"
@@ -656,15 +599,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={93.6}
-      cy={384.2}
-      r={67.1}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_13_)",
-      }}
-    />
     <linearGradient
       id="SVGID_14_"
       gradientUnits="userSpaceOnUse"
@@ -746,15 +680,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={494}
-      cy={118.8}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_15_)",
-      }}
-    />
     <linearGradient
       id="SVGID_16_"
       gradientUnits="userSpaceOnUse"
@@ -858,15 +783,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={227.5}
-      cy={384.2}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_17_)",
-      }}
-    />
     <linearGradient
       id="SVGID_18_"
       gradientUnits="userSpaceOnUse"
@@ -954,15 +870,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={495.3}
-      cy={249.3}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_19_)",
-      }}
-    />
     <linearGradient
       id="SVGID_20_"
       gradientUnits="userSpaceOnUse"
@@ -1050,15 +957,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={495.3}
-      cy={384.2}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_21_)",
-      }}
-    />
     <linearGradient
       id="SVGID_22_"
       gradientUnits="userSpaceOnUse"
@@ -1146,15 +1044,6 @@ export const GridTemplateIcons = (props: SVGProps<SVGSVGElement>) => (
         }}
       />
     </radialGradient>
-    <circle
-      cx={362.6}
-      cy={382.9}
-      r={65.6}
-      style={{
-        opacity: 0.8,
-        fill: "url(#SVGID_23_)",
-      }}
-    />
     <linearGradient
       id="SVGID_24_"
       gradientUnits="userSpaceOnUse"
