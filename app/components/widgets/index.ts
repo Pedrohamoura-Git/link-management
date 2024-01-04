@@ -7,6 +7,7 @@ export {
   HeartFilledIcon,
   SearchIcon,
   GridTemplateIcons,
+  DragAndDropIcons,
 } from "./icons";
 
 export { SearchInput } from "./searchInput";
