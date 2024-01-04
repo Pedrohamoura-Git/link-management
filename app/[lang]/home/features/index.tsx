@@ -1,6 +1,6 @@
 "use client";
 
-import { section } from "@/styles";
+import { flexColCenter, home } from "@/styles";
 import { useCurrentLocale } from "@/app/utils/custom-hooks";
 import { siteConfig } from "@/config/site";
 

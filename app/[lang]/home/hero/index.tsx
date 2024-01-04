@@ -1,4 +1,4 @@
-import { section } from "@/styles";
+import { home, flexColCenter } from "@/styles";
 
 import Image from "next/image";
 import { Button, Link } from "@/lib/nextUI";
