@@ -1,7 +1,7 @@
 import { Link } from "@/lib/nextUI";
 
 import { GithubIcon, LogoGray } from "@@/components/widgets/icons";
-import { siteConfig } from "@/config/site";
+import { socialMedia } from "@/config/links";
 
 type footerProps = {
   locale: {
@@ -20,7 +20,11 @@ export const Footer = ({ locale }: footerProps) => {
         <div className="flex items-center justify-center gap-3 ">
           <p>[instagram]</p>
 
-          <Link isExternal href={siteConfig.links.github} aria-label="Github">
+          <Link
+            isExternal
+            href={socialMedia.project.github}
+            aria-label="Github"
+          >
             <GithubIcon className="text-default-500" />
           </Link>
         </div>

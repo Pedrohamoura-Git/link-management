@@ -2,7 +2,7 @@
 
 import { flexColCenter, home } from "@/styles";
 import { useCurrentLocale } from "@/app/utils/custom-hooks";
-import { siteConfig } from "@/config/site";
+import { auth } from "@/config/links";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -97,7 +97,7 @@ export const Features = ({ locale }: featuresProps) => {
 
               <Link
                 className="ml-1 text-center text-primary"
-                href={`/${siteConfig.links.auth.signUp}`}
+                href={`/${auth.signUp}`}
               >
                 {locale.auth.options.sign_up_template_link}
               </Link>
