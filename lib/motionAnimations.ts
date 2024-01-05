@@ -1,3 +1,9 @@
+import {
+  type as defaultType,
+  delay as defaultDelay,
+  duration as defaultDuration,
+} from "@/config/animations";
+
 type slideProps = {
   direction: string;
   type?: string;
@@ -5,7 +11,12 @@ type slideProps = {
   duration?: number;
 };
 
-export const slideIn = ({ direction, type, delay, duration }: slideProps) => ({
+export const slideIn = ({
+  direction,
+  type = defaultType,
+  delay = defaultDelay,
+  duration = defaultDuration,
+}: slideProps) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
