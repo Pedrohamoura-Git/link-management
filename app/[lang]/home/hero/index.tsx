@@ -1,4 +1,6 @@
 import { home, flexColCenter } from "@/styles";
+import * as motion from "@/lib/motion";
+import { slideIn } from "@/lib/motionAnimations";
 
 import Image from "next/image";
 import { Button, Link } from "@/lib/nextUI";
@@ -22,13 +24,35 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
       <div
         className={`${flexColCenter} lg:flex-row-reverse lg:justify-between gap-6`}
       >
-        <Image
-          className={`${home.section.image} lg:basis-1/2`}
-          src={headerImage}
-          alt="Image of a smartphone with links to share"
-        />
+        <motion.div
+          className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
+          variants={slideIn({
+            direction: "right",
+            type: "tween",
+            delay: 0.2,
+            duration: 0.7,
+          })}
+          initial="hidden"
+          whileInView="show"
+        >
+          <Image
+            className={`${home.section.image} lg:basis-1/2`}
+            src={headerImage}
+            alt="Image of a smartphone with links to share"
+          />
+        </motion.div>
 
-        <div className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}>
+        <motion.div
+          className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
+          variants={slideIn({
+            direction: "left",
+            type: "tween",
+            delay: 0.2,
+            duration: 0.7,
+          })}
+          initial="hidden"
+          whileInView="show"
+        >
           <h1 className={`${home.section.title} lg:text-5xl`}>
             {heroLocale.hero.title}
           </h1>
@@ -47,7 +71,7 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
           >
             {heroLocale.hero.cta.try_now}
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
