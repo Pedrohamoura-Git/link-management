@@ -4,19 +4,22 @@ import {
   duration as defaultDuration,
 } from "@/config/animations";
 
-type genericProps = {
-  direction: string;
+interface defaultProps {
   type?: string;
   delay?: number;
   duration?: number;
-};
+}
+
+interface slideProps extends defaultProps {
+  direction: string;
+}
 
 export const slideIn = ({
   direction,
   type = defaultType,
   delay = defaultDelay,
   duration = defaultDuration,
-}: genericProps) => ({
+}: slideProps) => ({
   hidden: {
     x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
     y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
@@ -33,12 +36,16 @@ export const slideIn = ({
   },
 });
 
+interface fadeProps extends defaultProps {
+  direction: string;
+}
+
 export const fadeIn = ({
   direction,
   type = defaultType,
   delay = defaultDelay,
   duration = defaultDuration,
-}: genericProps) => ({
+}: fadeProps) => ({
   hidden: {
     x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
     y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
