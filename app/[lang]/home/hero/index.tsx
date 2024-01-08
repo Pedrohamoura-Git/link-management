@@ -1,6 +1,6 @@
 import { home, flexColCenter } from "@/styles";
 import * as motion from "@/lib/motion";
-import { fadeIn } from "@/lib/motionAnimations";
+import { fadeIn, scale } from "@/lib/motionAnimations";
 
 import Image from "next/image";
 import { Button, Link } from "@/lib/nextUI";
@@ -54,16 +54,27 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
             {heroLocale.hero.description}
           </p>
 
-          <Button
-            className="text-1xl p-7 lg:font-bold"
-            href={`/${lang}`}
-            as={Link}
-            color="primary"
-            showAnchorIcon
-            variant="solid"
+          <motion.div
+            className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
+            variants={scale({
+              delay: 1,
+              initialSize: 0.5,
+              finalSize: 1,
+            })}
+            initial="hidden"
+            whileInView="show"
           >
-            {heroLocale.hero.cta.try_now}
-          </Button>
+            <Button
+              className="text-1xl p-7 lg:font-bold"
+              href={`/${lang}`}
+              as={Link}
+              color="primary"
+              showAnchorIcon
+              variant="solid"
+            >
+              {heroLocale.hero.cta.try_now}
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>
