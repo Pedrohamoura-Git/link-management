@@ -3,6 +3,8 @@
 import { flexColCenter, home } from "@/styles";
 import { useCurrentLocale } from "@/app/utils/custom-hooks";
 import { auth } from "@/config/links";
+import * as motion from "@/lib/motion";
+import { fadeIn } from "@/lib/motionAnimations";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -54,9 +56,26 @@ export const Features = ({ locale }: featuresProps) => {
         <div
           className={`${flexColCenter} gap-6 lg:flex-row-reverse lg:justify-between`}
         >
-          <GridTemplateIcons className={`${home.section.image} lg:basis-2/5`} />
+          <motion.div
+            variants={fadeIn({
+              direction: "up",
+            })}
+            whileInView="show"
+            initial="hidden"
+          >
+            <GridTemplateIcons
+              className={`${home.section.image} lg:basis-2/5 w-full`}
+            />
+          </motion.div>
 
-          <div className={`${flexColCenter} gap-6 lg:items-start lg:basis-2/5`}>
+          <motion.div
+            variants={fadeIn({
+              direction: "up",
+            })}
+            initial="hidden"
+            whileInView="show"
+            className={`${flexColCenter} gap-6 lg:items-start lg:basis-2/5`}
+          >
             <h2 className={`${home.section.title}`}>{locale.features.title}</h2>
 
             <p className={`${home.section.description}`}>
@@ -74,22 +93,37 @@ export const Features = ({ locale }: featuresProps) => {
                 repeat={Infinity}
               />
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className={`${home.section.base}`}>
         <div
-          className={`${flexColCenter} gap-6 lg:flex-row lg:justify-between`}
+          className={`${flexColCenter} gap-10 lg:flex-row lg:justify-between`}
         >
-          <Image
-            className={`${home.section.image} lg:basis-1/3`}
-            src={qrCode}
-            style={{ backgroundColor: `white` }}
-            alt="A QR Code that can be used to access the sign in page"
-          />
+          <motion.div
+            variants={fadeIn({
+              direction: "up",
+            })}
+            initial="hidden"
+            whileInView="show"
+          >
+            <Image
+              className={`${home.section.image} lg:basis-1/3`}
+              src={qrCode}
+              style={{ backgroundColor: `white` }}
+              alt="A QR Code that can be used to access the sign in page"
+            />
+          </motion.div>
 
-          <div className={`${flexColCenter} gap-6 lg:items-start lg:basis-1/2`}>
+          <motion.div
+            variants={fadeIn({
+              direction: "up",
+            })}
+            whileInView="show"
+            initial="hidden"
+            className={`${flexColCenter} gap-6 lg:items-start lg:basis-1/2`}
+          >
             <h2 className={`${home.section.title}`}>{locale.features.title}</h2>
 
             <p className={`${home.section.description}`}>
@@ -102,7 +136,7 @@ export const Features = ({ locale }: featuresProps) => {
                 {locale.auth.options.sign_up_template_link}
               </Link>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

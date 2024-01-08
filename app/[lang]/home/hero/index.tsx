@@ -1,6 +1,6 @@
 import { home, flexColCenter } from "@/styles";
 import * as motion from "@/lib/motion";
-import { slideIn } from "@/lib/motionAnimations";
+import { fadeIn } from "@/lib/motionAnimations";
 
 import Image from "next/image";
 import { Button, Link } from "@/lib/nextUI";
@@ -25,12 +25,8 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
         className={`${flexColCenter} lg:flex-row-reverse lg:justify-between gap-6`}
       >
         <motion.div
-          className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
-          variants={slideIn({
-            direction: "right",
-            type: "tween",
-            delay: 0.2,
-            duration: 0.7,
+          variants={fadeIn({
+            direction: "up",
           })}
           initial="hidden"
           whileInView="show"
@@ -44,11 +40,8 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
 
         <motion.div
           className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
-          variants={slideIn({
-            direction: "left",
-            type: "tween",
-            delay: 0.2,
-            duration: 0.7,
+          variants={fadeIn({
+            direction: "up",
           })}
           initial="hidden"
           whileInView="show"

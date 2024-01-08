@@ -1,4 +1,6 @@
 import { home, flexColCenter } from "@/styles";
+import * as motion from "@/lib/motion";
+import { fadeIn } from "@/lib/motionAnimations";
 
 import { DragAndDropIcons } from "@@/components/widgets";
 
@@ -15,9 +17,26 @@ export const HowItWorks = ({ locale }: howItWorksProps) => {
   return (
     <section className={`${home.section.base}`}>
       <div className={`${flexColCenter} gap-6 lg:flex-row lg:justify-between`}>
-        <DragAndDropIcons className={`${home.section.image} lg:basis-2/5`} />
+        <motion.div
+          variants={fadeIn({
+            direction: "up",
+          })}
+          initial="hidden"
+          whileInView="show"
+        >
+          <DragAndDropIcons
+            className={`${home.section.image} lg:basis-2/5  w-full`}
+          />
+        </motion.div>
 
-        <div className={`${flexColCenter} gap-6 lg:basis-1/2 lg:items-start`}>
+        <motion.div
+          variants={fadeIn({
+            direction: "up",
+          })}
+          initial="hidden"
+          whileInView="show"
+          className={`${flexColCenter} gap-6 lg:basis-1/2 lg:items-start`}
+        >
           <h2 className={`${home.section.title}`}>
             {locale.how_it_works.title}
           </h2>
@@ -25,7 +44,7 @@ export const HowItWorks = ({ locale }: howItWorksProps) => {
           <p className={`${home.section.description}`}>
             {locale.how_it_works.description}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
