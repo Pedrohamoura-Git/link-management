@@ -109,7 +109,7 @@ export const Features = ({ locale }: featuresProps) => {
             whileInView="show"
           >
             <Image
-              className={`${home.section.image} lg:basis-1/3`}
+              className={`${home.section.image} lg:basis-1/3 lg:w-[350px]`}
               src={qrCode}
               style={{ backgroundColor: `white` }}
               alt="A QR Code that can be used to access the sign in page"
