@@ -63,3 +63,31 @@ export const fadeIn = ({
     },
   },
 });
+
+interface scaleProps extends defaultProps {
+  initialSize?: number;
+  finalSize?: number;
+}
+
+export const scale = ({
+  type = defaultType,
+  delay = defaultDelay,
+  duration = defaultDuration,
+  initialSize = 0,
+  finalSize = 1,
+}: scaleProps) => ({
+  hidden: {
+    scale: initialSize,
+    opacity: 0,
+  },
+  show: {
+    scale: finalSize,
+    opacity: 1,
+    transition: {
+      type,
+      delay,
+      duration,
+      ease: "easeOut",
+    },
+  },
+});
