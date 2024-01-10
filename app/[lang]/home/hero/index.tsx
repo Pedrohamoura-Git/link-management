@@ -57,9 +57,21 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
           <motion.div
             className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
             variants={scale({
-              delay: 1,
+              delay: 0.8,
               initialSize: 0.5,
               finalSize: 1,
+              customEffects: [
+                {
+                  hidden: {
+                    key: "filter",
+                    value: "blur(10px)",
+                  },
+                  show: {
+                    key: "filter",
+                    value: "blur(0px)",
+                  },
+                },
+              ],
             })}
             initial="hidden"
             whileInView="show"
