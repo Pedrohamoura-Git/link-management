@@ -32,6 +32,7 @@ export const HowItWorks = ({ locale }: howItWorksProps) => {
         <motion.div
           variants={fadeIn({
             direction: "up",
+            delay: 0.7,
           })}
           initial="hidden"
           whileInView="show"

@@ -71,6 +71,7 @@ export const Features = ({ locale }: featuresProps) => {
           <motion.div
             variants={fadeIn({
               direction: "up",
+              delay: 0.7,
             })}
             initial="hidden"
             whileInView="show"
@@ -119,6 +120,7 @@ export const Features = ({ locale }: featuresProps) => {
           <motion.div
             variants={fadeIn({
               direction: "up",
+              delay: 0.7,
             })}
             whileInView="show"
             initial="hidden"

@@ -42,6 +42,7 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
           className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
           variants={fadeIn({
             direction: "up",
+            delay: 0.6,
           })}
           initial="hidden"
           whileInView="show"
@@ -57,7 +58,7 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
           <motion.div
             className={`${flexColCenter} gap-6 lg:basis-2/5 lg:items-start`}
             variants={scale({
-              delay: 0.8,
+              delay: 1.2,
               initialSize: 0.5,
               finalSize: 1,
               customEffects: [
