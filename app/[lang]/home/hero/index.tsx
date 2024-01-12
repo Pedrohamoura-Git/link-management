@@ -20,7 +20,7 @@ type heroProps = {
 
 export const Hero = ({ lang, heroLocale }: heroProps) => {
   return (
-    <section className={`${home.section.base}`}>
+    <section className={`${home.section.base}`} data-testid="hero">
       <div
         className={`${flexColCenter} lg:flex-row-reverse lg:justify-between gap-6`}
       >
@@ -84,6 +84,7 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
               color="primary"
               showAnchorIcon
               variant="solid"
+              data-testid="try-now-button"
             >
               {heroLocale.hero.cta.try_now}
             </Button>
