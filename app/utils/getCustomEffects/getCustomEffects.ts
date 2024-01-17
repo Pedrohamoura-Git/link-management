@@ -2,7 +2,7 @@ import { CustomEffect } from "@/types/animations";
 
 type GetCustomEffectsProps = {
   customEffects: CustomEffect[] | undefined;
-  of: string;
+  of: "hidden" | "show";
 };
 
 export const getCustomEffects = ({
