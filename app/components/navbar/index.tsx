@@ -13,7 +13,6 @@ import NextLink from "next/link";
 
 import {
   LogoStandard,
-  SearchInput,
   LocaleSwitcher,
   ThemeSwitcher,
 } from "@@/components/widgets";
@@ -50,9 +49,7 @@ export const Navbar = async ({
           <ThemeSwitcher />
           <LocaleSwitcher />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <SearchInput />
-        </NavbarItem>
+        <NavbarItem className="hidden lg:flex"></NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Link href="#" size="lg">
             <Button color="primary" className="capitalize">
@@ -72,8 +69,6 @@ export const Navbar = async ({
       </NavbarContent>
 
       <NavbarMenu>
-        <SearchInput />
-
         <div className="flex flex-col items-center justify-center gap-2 mx-4 mt-2">
           <NavbarMenuItem>
             <Link href="#" size="lg" className="mt-10">
