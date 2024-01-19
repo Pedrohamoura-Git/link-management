@@ -134,6 +134,7 @@ export const Features = ({ locale }: featuresProps) => {
               <Link
                 className="ml-1 text-center text-primary"
                 href={`/${auth.signUp}`}
+                data-testid="sign-up"
               >
                 {locale.auth.options.sign_up_template_link}
               </Link>
