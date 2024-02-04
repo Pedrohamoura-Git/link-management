@@ -44,7 +44,10 @@ export const RegisterForm = () => {
       isBlurred
     >
       <CardBody>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={`${flexColCenter} sm:gap-5`}
+        >
           <Controller
             name="name"
             control={control}
