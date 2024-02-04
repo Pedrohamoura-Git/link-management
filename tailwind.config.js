@@ -10,7 +10,12 @@ module.exports = {
     './styles/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
