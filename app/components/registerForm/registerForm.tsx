@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
 
+type FormInputs = z.infer<typeof registerSchema>;
+
 export const RegisterForm = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -20,7 +22,7 @@ export const RegisterForm = () => {
     control,
     reset,
     formState: { errors },
-  } = useForm<Input>({
+  } = useForm<FormInputs>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
