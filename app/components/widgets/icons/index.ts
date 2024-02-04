@@ -10,3 +10,6 @@ export { MoonFilledIcon } from "./moonFilled";
 export { SunFilledIcon } from "./sunFilled";
 export { HeartFilledIcon } from "./heartFilled";
 export { SearchIcon } from "./search";
+
+export { EyeFilledIcon } from "./components/EyeFilledIcon";
+export { EyeSlashFilledIcon } from "./components/EyeSlashFilledIcon";
