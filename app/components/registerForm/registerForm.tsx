@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useTheme } from "next-themes";
 import { useForm, Controller } from "react-hook-form";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@@/validators/auth/signUp";
-import { cn } from "@/lib/utils";
 
 import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
@@ -158,9 +156,7 @@ export const RegisterForm = () => {
                 Confirm
               </Button>
               <Button
-                className={cn(
-                  theme === "dark" && "text-secondary bg-slate-300"
-                )}
+                className="dark:text-secondary dark:bg-slate-300"
                 onClick={clearFields}
               >
                 Clear
