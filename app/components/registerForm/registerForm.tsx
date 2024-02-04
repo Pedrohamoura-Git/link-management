@@ -156,7 +156,7 @@ export const RegisterForm = () => {
                 Confirm
               </Button>
               <Button
-                className="dark:text-secondary dark:bg-slate-300"
+                className="dark:text-primary dark:bg-slate-300"
                 onClick={clearFields}
               >
                 Clear
