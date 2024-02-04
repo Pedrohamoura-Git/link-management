@@ -138,7 +138,7 @@ export const RegisterForm = () => {
                   </button>
                 }
                 type={isVisible ? "text" : "password"}
-                className="max-w-xs mt-10"
+                className="mt-10"
                 size="lg"
                 isInvalid={!!errors.password}
                 color={!!errors.password ? "danger" : "success"}
