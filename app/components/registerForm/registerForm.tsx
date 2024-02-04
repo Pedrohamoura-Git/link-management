@@ -10,6 +10,8 @@ import { registerSchema } from "@@/validators/auth/signUp";
 import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
 
+import { flexColCenter } from "@/styles";
+
 type FormInputs = z.infer<typeof registerSchema>;
 
 export const RegisterForm = () => {
@@ -36,6 +38,10 @@ export const RegisterForm = () => {
         [key]: "",
       });
     });
+  }
+
+  function onSubmit(data: FormInputs) {
+    console.log("data: ", data);
   }
 
   return (
