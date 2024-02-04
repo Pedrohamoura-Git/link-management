@@ -161,14 +161,14 @@ export const RegisterForm = () => {
 
           <CardFooter>
             <div className="flex gap-4 mt-7">
-              <Button type="submit" color="success">
-                Confirm
+              <Button type="submit" color="success" className="sm:w-32">
+                {locale.common.form.buttons.confirm}
               </Button>
               <Button
-                className="dark:text-primary dark:bg-slate-300"
+                className="dark:text-primary dark:bg-slate-300 sm:w-24"
                 onClick={clearFields}
               >
-                Clear
+                {locale.common.form.buttons.clear}
               </Button>
             </div>
           </CardFooter>

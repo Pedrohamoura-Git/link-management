@@ -1,4 +1,12 @@
 {
+  "common": {
+    "form": {
+      "buttons": {
+        "confirm": "Confirmar",
+        "clear": "Limpar"
+      }
+    }
+  },
   "auth": {
     "options": {
       "login": "Entrar",
