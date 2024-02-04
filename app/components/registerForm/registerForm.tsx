@@ -73,6 +73,34 @@ export const RegisterForm = () => {
               />
             )}
           />
+          <Controller
+            name="username"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Input
+                className="mt-10"
+                placeholder="Enter your username"
+                labelPlacement="outside"
+                label="Username"
+                variant="bordered"
+                size="lg"
+                isInvalid={!!errors.username}
+                color={!!errors.username ? "danger" : "success"}
+                errorMessage={
+                  !!errors.username && "Please enter a valid username"
+                }
+                startContent={
+                  <div className="flex items-center mr-2 pointer-events-none">
+                    <span className="text-default-400 text-small">
+                      linka.ai/
+                    </span>
+                  </div>
+                }
+                {...field}
+              />
+            )}
+          />
 
           <CardFooter>
             <div className="flex gap-4 mt-7">
