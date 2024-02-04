@@ -8,6 +8,8 @@ export {
   SearchIcon,
   GridTemplateIcons,
   DragAndDropIcons,
+  EyeFilledIcon,
+  EyeSlashFilledIcon,
 } from "./icons";
 
 export { SearchInput } from "./searchInput";
