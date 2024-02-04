@@ -28,6 +28,14 @@ export const RegisterForm = () => {
     },
   });
 
+  function clearFields() {
+    Object.keys(registerSchema).forEach((key) => {
+      reset({
+        [key]: "",
+      });
+    });
+  }
+
   return (
     <Card
       className="dark:border dark:border-slate-500 dark:bg-gradient-to-br dark:from-[#020817] dark:via-[#000823] dark:to-[#000038] w-full h-1/2 backdrop-saturate-200"
