@@ -79,7 +79,7 @@ export const Hero = ({ lang, heroLocale }: heroProps) => {
           >
             <Button
               className="text-1xl p-7 lg:font-bold"
-              href={`/${lang}`}
+              href={`/${lang}/sign-up`}
               as={Link}
               color="primary"
               showAnchorIcon
