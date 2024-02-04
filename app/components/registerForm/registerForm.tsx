@@ -40,7 +40,7 @@ export const RegisterForm = () => {
 
   return (
     <Card
-      className="dark:border dark:border-slate-500 dark:bg-gradient-to-br dark:from-[#020817] dark:via-[#000823] dark:to-[#000038] w-full h-1/2 backdrop-saturate-200"
+      className="dark:border dark:border-slate-500 dark:bg-gradient-to-br dark:from-[#020817] dark:via-[#000823] dark:to-[#000038] w-full h-1/2 backdrop-saturate-200 sm:max-w-2xl sm:p-4"
       isBlurred
     >
       <CardBody>
