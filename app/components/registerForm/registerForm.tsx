@@ -14,7 +14,28 @@ import { flexColCenter } from "@/styles";
 
 type FormInputs = z.infer<typeof registerSchema>;
 
-export const RegisterForm = () => {
+type RegisterFormProps = {
+  locale: {
+    common: {
+      form: {
+        buttons: {
+          confirm: string;
+          clear: string;
+        };
+      };
+    };
+    signUp: {
+      placeholders: {
+        name: string;
+        username: string;
+        email: string;
+        password: string;
+      };
+    };
+  };
+};
+
+export const RegisterForm = ({ locale }: RegisterFormProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
   const {
@@ -62,7 +83,7 @@ export const RegisterForm = () => {
               <>
                 <Input
                   className="mt-10"
-                  placeholder="Enter your name"
+                  placeholder={locale.signUp.placeholders.name}
                   labelPlacement="outside"
                   label="Name"
                   variant="bordered"
@@ -82,7 +103,7 @@ export const RegisterForm = () => {
             render={({ field }) => (
               <Input
                 className="mt-10"
-                placeholder="Enter your email"
+                placeholder={locale.signUp.placeholders.email}
                 labelPlacement="outside"
                 label="Email"
                 type="email"
@@ -102,7 +123,7 @@ export const RegisterForm = () => {
             render={({ field }) => (
               <Input
                 className="mt-10"
-                placeholder="Enter your username"
+                placeholder={locale.signUp.placeholders.username}
                 labelPlacement="outside"
                 label="Username"
                 variant="bordered"
@@ -130,7 +151,7 @@ export const RegisterForm = () => {
             render={({ field }) => (
               <Input
                 variant="bordered"
-                placeholder="Enter your password"
+                placeholder={locale.signUp.placeholders.password}
                 labelPlacement="outside"
                 label="Password"
                 endContent={
