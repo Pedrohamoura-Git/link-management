@@ -32,7 +32,7 @@ export const LogoWithCompanyOwner: React.FC<IconSvgProps> = ({
         <stop offset={0.9} stopColor="#0063ff" />
         <stop offset={1} stopColor="#0049ff" />
       </linearGradient>
-      <style>{".cls-1{fill:#242939}"}</style>
+      <style>{".cls-1{fill:currentColor}"}</style>
     </defs>
     <g id="Camada_2" data-name="Camada 2">
       <path
