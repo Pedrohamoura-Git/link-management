@@ -53,6 +53,26 @@ export const RegisterForm = () => {
               </>
             )}
           />
+          <Controller
+            name="email"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Input
+                className="mt-10"
+                placeholder="Enter your email"
+                labelPlacement="outside"
+                label="Email"
+                type="email"
+                variant="bordered"
+                size="lg"
+                isInvalid={!!errors.email}
+                color={!!errors.email ? "danger" : "success"}
+                errorMessage={!!errors.email && "Please enter a valid email"}
+                {...field}
+              />
+            )}
+          />
 
           <CardFooter>
             <div className="flex gap-4 mt-7">
