@@ -10,6 +10,7 @@ export {
   DragAndDropIcons,
   EyeFilledIcon,
   EyeSlashFilledIcon,
+  LogoWithCompanyOwner,
 } from "./icons";
 
 export { SearchInput } from "./searchInput";
