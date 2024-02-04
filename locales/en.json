@@ -27,7 +27,15 @@
       "all_rights_reserved": "Linka.ai - All rights reserved ©"
     }
   },
-  "about": {
-    "title": "about"
+  "signUp": {
+    "title": "Create your Linka.ai account for free",
+    "form": {
+      "placeholders": {
+        "name": "Enter your name",
+        "username": "Enter your username",
+        "email": "Enter your email",
+        "password": "Enter your password"
+      }
+    }
   }
 }
