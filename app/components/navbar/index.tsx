@@ -51,7 +51,7 @@ export const Navbar = async ({
         </NavbarItem>
         <NavbarItem className="hidden lg:flex"></NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="#" size="lg">
+          <Link href="sign-up" size="lg">
             <Button color="primary" className="capitalize">
               {locale.auth.options.sing_up}
             </Button>
@@ -71,7 +71,7 @@ export const Navbar = async ({
       <NavbarMenu>
         <div className="flex flex-col items-center justify-center gap-2 mx-4 mt-2">
           <NavbarMenuItem>
-            <Link href="#" size="lg" className="mt-10">
+            <Link href="sign-up" size="lg" className="mt-10">
               <Button color="primary" className="capitalize">
                 {locale.auth.options.sing_up}
               </Button>
