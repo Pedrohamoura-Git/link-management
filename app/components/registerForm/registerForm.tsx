@@ -8,8 +8,11 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@@/validators/auth/signUp";
 import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
+import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
 
 export const RegisterForm = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
   const {
     handleSubmit,
     control,
@@ -96,6 +99,41 @@ export const RegisterForm = () => {
                       linka.ai/
                     </span>
                   </div>
+                }
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="password"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <Input
+                variant="bordered"
+                placeholder="Enter your password"
+                labelPlacement="outside"
+                label="Password"
+                endContent={
+                  <button
+                    className="focus:outline-none"
+                    type="button"
+                    onClick={toggleVisibility}
+                  >
+                    {isVisible ? (
+                      <EyeSlashFilledIcon className="text-2xl pointer-events-none text-default-400" />
+                    ) : (
+                      <EyeFilledIcon className="text-2xl pointer-events-none text-default-400" />
+                    )}
+                  </button>
+                }
+                type={isVisible ? "text" : "password"}
+                className="max-w-xs mt-10"
+                size="lg"
+                isInvalid={!!errors.password}
+                color={!!errors.password ? "danger" : "success"}
+                errorMessage={
+                  !!errors.password && "Please enter a valid password"
                 }
                 {...field}
               />
