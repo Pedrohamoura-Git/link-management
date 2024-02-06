@@ -9,5 +9,9 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
+type UserSchemaType = typeof userSchema extends mongoose.Schema<infer T>
+  ? T
+  : any;
 
+export type { UserSchemaType };
 export default User;
