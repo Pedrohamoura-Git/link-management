@@ -11,6 +11,7 @@ import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
 
 import { flexColCenter } from "@/styles";
+import { createUser } from "@/app/services/actions/user.action";
 
 type FormInputs = z.infer<typeof registerSchema>;
 
@@ -61,8 +62,10 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
     });
   }
 
-  function onSubmit(data: FormInputs) {
-    console.log("data: ", data);
+  async function onSubmit(data: FormInputs) {
+    const { name, email, username, password } = data;
+
+    await createUser({ name, email, username, password });
   }
 
   return (
