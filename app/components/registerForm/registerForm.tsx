@@ -53,6 +53,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
       password: "",
     },
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   function clearFields() {
     Object.keys(registerSchema).forEach((key) => {
@@ -65,7 +66,14 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
   async function onSubmit(data: FormInputs) {
     const { name, email, username, password } = data;
 
-    await createUser({ name, email, username, password });
+    try {
+      setIsLoading(true);
+      await createUser({ name, email, username, password });
+      setIsLoading(false);
+    } catch (error) {
+      console.log("error: ", error);
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -185,7 +193,12 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
 
           <CardFooter>
             <div className="flex gap-4 mt-7">
-              <Button type="submit" color="success" className="sm:w-32">
+              <Button
+                type="submit"
+                color="success"
+                className="sm:w-32"
+                isLoading={isLoading}
+              >
                 {locale.common.form.buttons.confirm}
               </Button>
               <Button
