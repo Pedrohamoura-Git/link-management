@@ -4,6 +4,12 @@
       "buttons": {
         "confirm": "Confirm",
         "clear": "Clear"
+      },
+      "label": {
+        "name": "Name",
+        "email": "Email",
+        "username": "Username",
+        "password": "Password"
       }
     }
   },

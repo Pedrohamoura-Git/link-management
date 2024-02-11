@@ -23,6 +23,12 @@ type RegisterFormProps = {
           confirm: string;
           clear: string;
         };
+        label: {
+          name: string;
+          email: string;
+          username: string;
+          password: string;
+        };
       };
     };
     signUp: {
@@ -96,7 +102,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
                   className="mt-10"
                   placeholder={locale.signUp.placeholders.name}
                   labelPlacement="outside"
-                  label="Name"
+                  label={locale.common.form.label.name}
                   variant="bordered"
                   {...field}
                   color={!!errors.name ? "danger" : "success"}
@@ -116,7 +122,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
                 className="mt-10"
                 placeholder={locale.signUp.placeholders.email}
                 labelPlacement="outside"
-                label="Email"
+                label={locale.common.form.label.email}
                 type="email"
                 variant="bordered"
                 size="lg"
@@ -136,7 +142,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
                 className="mt-10"
                 placeholder={locale.signUp.placeholders.username}
                 labelPlacement="outside"
-                label="Username"
+                label={locale.common.form.label.username}
                 variant="bordered"
                 size="lg"
                 isInvalid={!!errors.username}
@@ -164,7 +170,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
                 variant="bordered"
                 placeholder={locale.signUp.placeholders.password}
                 labelPlacement="outside"
-                label="Password"
+                label={locale.common.form.label.password}
                 endContent={
                   <button
                     className="focus:outline-none"
