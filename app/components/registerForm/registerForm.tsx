@@ -9,6 +9,7 @@ import { registerSchema } from "@@/validators/auth/signUp";
 
 import { Button, Input, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { EyeSlashFilledIcon, EyeFilledIcon } from "@@/components/widgets";
+import { useToast } from "@/components/ui/use-toast";
 
 import { flexColCenter } from "@/styles";
 import { createUser } from "@/app/services/actions/user.action";
@@ -60,6 +61,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
     },
   });
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   function clearFields() {
     Object.keys(registerSchema).forEach((key) => {
@@ -76,8 +78,16 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
       setIsLoading(true);
       await createUser({ name, email, username, password });
       setIsLoading(false);
+
+      toast({
+        title: locale.common.notification.title.success,
+        description: locale.signUp.notification.description.account_created,
+      });
     } catch (error) {
-      console.log("error: ", error);
+      toast({
+        title: locale.common.notification.title.casual_error,
+        description: locale.signUp.notification.description.generic_error,
+      });
       setIsLoading(false);
     }
   }
