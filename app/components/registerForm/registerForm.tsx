@@ -121,6 +121,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
             render={({ field }) => (
               <>
                 <Input
+                  isRequired
                   className="mt-10"
                   placeholder={locale.signUp.placeholders.name}
                   labelPlacement="outside"
@@ -141,6 +142,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
             rules={{ required: true }}
             render={({ field }) => (
               <Input
+                isRequired
                 className="mt-10"
                 placeholder={locale.signUp.placeholders.email}
                 labelPlacement="outside"
@@ -161,6 +163,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
             rules={{ required: true }}
             render={({ field }) => (
               <Input
+                isRequired
                 className="mt-10"
                 placeholder={locale.signUp.placeholders.username}
                 labelPlacement="outside"
@@ -189,6 +192,7 @@ export const RegisterForm = ({ locale }: RegisterFormProps) => {
             rules={{ required: true }}
             render={({ field }) => (
               <Input
+                isRequired
                 variant="bordered"
                 placeholder={locale.signUp.placeholders.password}
                 labelPlacement="outside"
