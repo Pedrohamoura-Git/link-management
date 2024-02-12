@@ -11,6 +11,12 @@
         "username": "Username",
         "password": "Password"
       }
+    },
+    "notification": {
+      "title": {
+        "success": "Success!",
+        "casual_error": "Uh oh! Something went wrong."
+      }
     }
   },
   "auth": {
@@ -49,6 +55,12 @@
         "username": "Enter your username",
         "email": "Enter your email",
         "password": "Enter your password"
+      }
+    },
+    "notification": {
+      "description": {
+        "account_created": "Your account has been created.",
+        "generic_error": "There was a problem with your request."
       }
     }
   }

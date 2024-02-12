@@ -31,6 +31,12 @@ type RegisterFormProps = {
           password: string;
         };
       };
+      notification: {
+        title: {
+          success: string;
+          casual_error: string;
+        };
+      };
     };
     signUp: {
       placeholders: {
@@ -38,6 +44,12 @@ type RegisterFormProps = {
         username: string;
         email: string;
         password: string;
+      };
+      notification: {
+        description: {
+          account_created: string;
+          generic_error: string;
+        };
       };
     };
   };

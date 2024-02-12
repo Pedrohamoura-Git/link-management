@@ -11,6 +11,12 @@
         "username": "Usuário",
         "password": "Senha"
       }
+    },
+    "notification": {
+      "title": {
+        "success": "Sucesso!",
+        "casual_error": "Ops! Algo deu errado."
+      }
     }
   },
   "auth": {
@@ -49,6 +55,12 @@
         "username": "Digite seu usuário",
         "email": "Digite seu email",
         "password": "Digite sua senha"
+      }
+    },
+    "notification": {
+      "description": {
+        "account_created": "Sua conta foi criada.",
+        "generic_error": "Houve um problema ao processar as informações."
       }
     }
   }

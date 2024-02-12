@@ -12,7 +12,12 @@ export default async function signUp({
   const locale = await getLocale(lang);
   const registerFormLocale = {
     common: locale.common,
-    signUp: { placeholders: locale.signUp.form.placeholders },
+    signUp: {
+      placeholders: locale.signUp.form.placeholders,
+      notification: {
+        description: locale.signUp.notification.description,
+      },
+    },
   };
 
   return (
