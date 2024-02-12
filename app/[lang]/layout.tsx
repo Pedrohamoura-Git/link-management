@@ -4,6 +4,8 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import { Navbar } from "@@/components";
+import { Toaster } from "@/components/ui/toaster";
+
 import clsx from "clsx";
 import { Locale, i18n } from "@/i18n.config";
 
@@ -55,6 +57,7 @@ export default function RootLayout({
           <main className="container flex-grow px-6 pt-16 mx-auto max-w-[90%]">
             {children}
           </main>
+          <Toaster />
         </Providers>
       </body>
     </html>
