@@ -21,11 +21,7 @@ import { Locale } from "@/i18n.config";
 import { getLocale } from "@/lib/locales";
 import { Button } from "@nextui-org/button";
 
-export const Navbar = async ({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) => {
+export const Navbar = async ({ lang }: { lang: Locale }) => {
   const locale = await getLocale(lang);
 
   return (
