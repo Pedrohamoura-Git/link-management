@@ -13,8 +13,7 @@ import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 
 export const FloatingMenu = () => {
   return (
-    <div className="fixed right-0 z-10 bottom-unit-3xl">
-      <Dropdown backdrop="blur">
+    <div className="fixed left-0 z-10 bottom-unit-5xl">
         <DropdownTrigger>
           <Button variant="bordered">Open Menu</Button>
         </DropdownTrigger>
