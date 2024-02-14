@@ -35,7 +35,8 @@ export const LocaleSwitcher = () => {
       selectedKeys={[currentLocale]}
       className="w-20"
       classNames={{
-        mainWrapper: "h-8",
+        trigger: "h-10 border border-border bg-background",
+        popoverContent: "bg-background",
       }}
       onChange={changeLocale}
     >
