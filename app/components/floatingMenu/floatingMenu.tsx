@@ -9,6 +9,7 @@ import {
   DropdownItem,
   Button,
 } from "@nextui-org/react";
+import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 
 export const FloatingMenu = () => {
   return (
@@ -18,11 +19,11 @@ export const FloatingMenu = () => {
           <Button variant="bordered">Open Menu</Button>
         </DropdownTrigger>
         <DropdownMenu variant="faded" aria-label="Static Actions">
-          <DropdownItem key="new">New file</DropdownItem>
-          <DropdownItem key="copy">Copy link</DropdownItem>
-          <DropdownItem key="edit">Edit file</DropdownItem>
-          <DropdownItem key="delete" className="text-danger" color="danger">
-            Delete file
+          <DropdownItem key="theme-switcher">
+            <ThemeSwitcher />
+          </DropdownItem>
+          <DropdownItem key="locale-switcher">
+            <LocaleSwitcher />
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
