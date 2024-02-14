@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@@/components";
+import { FloatingMenu } from "@@/components";
 import { Toaster } from "@/components/ui/toaster";
 
 import clsx from "clsx";
@@ -53,7 +53,7 @@ export default function RootLayout({
             enableSystem: true,
           }}
         >
-          <Navbar params={params} />
+          <FloatingMenu />
           <main className="container flex-grow px-6 pt-16 mx-auto max-w-[90%]">
             {children}
           </main>
