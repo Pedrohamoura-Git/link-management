@@ -17,6 +17,7 @@ export const FloatingMenu = () => {
       <Dropdown
         backdrop="blur"
         className="border bg-background border-border"
+        closeOnSelect={false}
       >
         <DropdownTrigger>
           <Button variant="bordered">Open Menu</Button>
