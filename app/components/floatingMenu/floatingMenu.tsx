@@ -72,11 +72,14 @@ export const FloatingMenu = () => {
     wrapper.addEventListener("mousedown", onMouseDown);
     wrapper.addEventListener("mouseup", onMouseUp);
     body.addEventListener("mousemove", onMouseMove);
+    body.addEventListener("mouseleave", onMouseUp);
 
 
     const cleanUp = () => {
       wrapper.removeEventListener("mousedown", onMouseDown);
+      wrapper.removeEventListener("mouseup", onMouseUp);
       body.removeEventListener("mousemove", onMouseMove);
+      body.removeEventListener("mouseleave", onMouseUp);
     };
 
     return cleanUp;
