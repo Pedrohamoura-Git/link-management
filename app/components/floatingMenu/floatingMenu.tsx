@@ -25,6 +25,34 @@ export const FloatingMenu = () => {
     lastX: 0,
     lastY: 0,
   });
+
+  useEffect(() => {
+    // Se o usuário não clicar no wrapper ou o body não existir, não faz nada
+    if (!wrapperRef.current || !document.body) return;
+
+    // Seleciona o wrapper e o body
+    const wrapper = wrapperRef.current;
+    const body = document.body;
+
+    /**
+     * * Em desktops, se o usuário clicar, define o isClicked como true
+     * * E armazena as coordenadas de inicio de acordo com a posição atual do click
+     *  */
+    const onMouseDown = (e: MouseEvent) => {
+      console.log("onMouseDown");
+      isClicked.current = true;
+      wrapperCoords.current.startX = e.clientX;
+    };
+
+    wrapper.addEventListener("mousedown", onMouseDown);
+
+    const cleanUp = () => {
+      wrapper.removeEventListener("mousedown", onMouseDown);
+    };
+
+    return cleanUp;
+  }, []);
+
   return (
     <div
       className="fixed left-0 z-10 hover:cursor-pointer bottom-unit-5xl"
