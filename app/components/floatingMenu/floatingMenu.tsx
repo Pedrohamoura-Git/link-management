@@ -58,8 +58,21 @@ export const FloatingMenu = () => {
       wrapper.style.left = `${nextX}px`;
     };
 
+    /**
+     * * Em desktops, quando o usuário terminda de clicar, define o isClicked como false
+     * * E armazena as coordenadas de finais de acordo com a posição atual do click
+     *  */
+    const onMouseUp = (e: MouseEvent) => {
+      console.log("onMouseUp");
+      isClicked.current = false;
+      wrapperCoords.current.lastX = wrapper.offsetLeft;
+    };
+
+
     wrapper.addEventListener("mousedown", onMouseDown);
+    wrapper.addEventListener("mouseup", onMouseUp);
     body.addEventListener("mousemove", onMouseMove);
+
 
     const cleanUp = () => {
       wrapper.removeEventListener("mousedown", onMouseDown);
