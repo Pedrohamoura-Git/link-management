@@ -114,6 +114,7 @@ export const FloatingMenu = () => {
       className="fixed left-0 z-10 hover:cursor-pointer bottom-unit-5xl"
       ref={wrapperRef}
     >
+      <div className="flex items-center">
         <Dropdown
           backdrop="blur"
           className="border bg-background border-border"
