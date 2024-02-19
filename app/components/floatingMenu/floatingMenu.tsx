@@ -68,18 +68,42 @@ export const FloatingMenu = () => {
       wrapperCoords.current.lastX = wrapper.offsetLeft;
     };
 
+    const onTouchstart = (e: TouchEvent) => {
+      isClicked.current = true;
+
+      wrapperCoords.current.startX = e.touches[0].clientX;
+    };
+    const onTouchend = (e: TouchEvent) => {
+      isClicked.current = false;
+      wrapperCoords.current.lastX = wrapper.offsetLeft;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (!isClicked.current) return;
+      var touchX = e.touches[0].clientX;
+      const nextX =
+        touchX - (wrapperCoords.current.startX + wrapperCoords.current.lastX);
+
+      wrapper.style.left = `${nextX}px`;
+    };
 
     wrapper.addEventListener("mousedown", onMouseDown);
     wrapper.addEventListener("mouseup", onMouseUp);
     body.addEventListener("mousemove", onMouseMove);
     body.addEventListener("mouseleave", onMouseUp);
 
+    wrapper.addEventListener("touchstart", onTouchstart);
+    wrapper.addEventListener("touchend", onTouchend);
+    body.addEventListener("touchmove", onTouchMove);
 
     const cleanUp = () => {
       wrapper.removeEventListener("mousedown", onMouseDown);
       wrapper.removeEventListener("mouseup", onMouseUp);
       body.removeEventListener("mousemove", onMouseMove);
       body.removeEventListener("mouseleave", onMouseUp);
+
+      wrapper.addEventListener("touchstart", onTouchstart);
+      wrapper.addEventListener("touchend", onTouchend);
+      body.addEventListener("touchmove", onTouchMove);
     };
 
     return cleanUp;
