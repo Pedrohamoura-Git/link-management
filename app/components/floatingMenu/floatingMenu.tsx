@@ -14,6 +14,7 @@ import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 export const FloatingMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const isClicked = useRef<boolean>(false);
   const wrapperCoords = useRef<{
     startX: number;
     startY: number;
