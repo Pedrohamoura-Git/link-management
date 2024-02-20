@@ -14,6 +14,7 @@ import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 export const FloatingMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const arrowCenterRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>(false);
   const wrapperCoords = useRef<{
     xWhenDraggingStarted: number;
@@ -27,10 +28,19 @@ export const FloatingMenu = () => {
 
   useEffect(() => {
     // Se o usuário não clicar no wrapper ou o body não existir, não faz nada
-    if (!wrapperRef.current || !document.body) return;
+    if (
+      !wrapperRef.current ||
+      !arrowRef.current ||
+      !arrowCenterRef.current ||
+      !window ||
+      !document.body
+    )
+      return;
 
     // Seleciona o wrapper e o body
     const wrapper = wrapperRef.current;
+    const arrow = arrowRef.current;
+    const arrowCenter = arrowCenterRef.current;
     const body = document.body;
 
     /**
@@ -134,18 +144,23 @@ export const FloatingMenu = () => {
 
         <i
           ref={arrowRef}
-          className="arrow right"
+          className="flex items-center justify-center"
           style={{
             height: "25px",
             width: "25px",
             border: "solid red",
             borderWidth: "0 3px 3px 0",
-            display: "inline-block",
+            // display: "inline-block",
             // padding: "3px",
             transform: "rotate(-45deg)",
             // -webkit-transform: rotate(-45deg),
           }}
-        ></i>
+        >
+          <div
+            ref={arrowCenterRef}
+            className="w-1 h-1 border border-green-300"
+          ></div>
+        </i>
       </div>
     </div>
   );
