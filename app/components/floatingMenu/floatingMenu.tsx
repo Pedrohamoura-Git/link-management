@@ -53,8 +53,7 @@ export const FloatingMenu = () => {
       console.log("onMouseMove");
       if (!isClicked.current) return;
       const nextX =
-        e.clientX -
-        (wrapperCoords.current.startX + wrapperCoords.current.lastX);
+        e.clientX - wrapperCoords.current.startX + wrapperCoords.current.lastX;
 
       wrapper.style.left = `${nextX}px`;
     };
