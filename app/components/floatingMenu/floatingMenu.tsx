@@ -77,6 +77,7 @@ export const FloatingMenu = () => {
         return;
 
       wrapperCoords.current.lastX = moveToX;
+      wrapper.style.left = `${moveToX}px`;
     };
 
     /**
