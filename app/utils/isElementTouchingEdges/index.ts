@@ -1,0 +1,1 @@
+export { isElementTouchingEdges } from "./isElementTouchingEdges";
