@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from "react";
 import {
   Dropdown,
-  Link,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
