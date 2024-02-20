@@ -11,6 +11,8 @@ import {
 } from "@nextui-org/react";
 import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 
+import { canElementBeDraggedAnyFurther } from "@@/utils";
+
 export const FloatingMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
