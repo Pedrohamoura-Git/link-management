@@ -16,15 +16,13 @@ export const FloatingMenu = () => {
   const arrowRef = useRef<HTMLDivElement>(null);
   const isClicked = useRef<boolean>(false);
   const wrapperCoords = useRef<{
-    startX: number;
-    startY: number;
+    xWhenDraggingStarted: number;
+    xWhenDraggingStopped: number;
     lastX: number;
-    lastY: number;
   }>({
-    startX: 0,
-    startY: 0,
+    xWhenDraggingStarted: 0,
+    xWhenDraggingStopped: 0,
     lastX: 0,
-    lastY: 0,
   });
 
   useEffect(() => {
@@ -42,7 +40,7 @@ export const FloatingMenu = () => {
     const onMouseDown = (e: MouseEvent) => {
       console.log("onMouseDown");
       isClicked.current = true;
-      wrapperCoords.current.startX = e.clientX;
+      wrapperCoords.current.xWhenDraggingStarted = e.clientX;
     };
 
     /**
@@ -65,23 +63,23 @@ export const FloatingMenu = () => {
     const onMouseUp = (e: MouseEvent) => {
       console.log("onMouseUp");
       isClicked.current = false;
-      wrapperCoords.current.lastX = wrapper.offsetLeft;
+      wrapperCoords.current.xWhenDraggingStopped = wrapper.offsetLeft;
     };
 
     const onTouchstart = (e: TouchEvent) => {
       isClicked.current = true;
 
-      wrapperCoords.current.startX = e.touches[0].clientX;
+      wrapperCoords.current.xWhenDraggingStarted = e.touches[0].clientX;
     };
     const onTouchend = (e: TouchEvent) => {
       isClicked.current = false;
-      wrapperCoords.current.lastX = wrapper.offsetLeft;
+      wrapperCoords.current.xWhenDraggingStopped = wrapper.offsetLeft;
     };
     const onTouchMove = (e: TouchEvent) => {
       if (!isClicked.current) return;
-      var touchX = e.touches[0].clientX;
-      const nextX =
-        touchX - (wrapperCoords.current.startX + wrapperCoords.current.lastX);
+        touchX -
+        (wrapperCoords.current.xWhenDraggingStarted +
+          wrapperCoords.current.xWhenDraggingStopped);
 
       wrapper.style.left = `${nextX}px`;
     };
