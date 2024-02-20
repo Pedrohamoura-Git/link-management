@@ -87,11 +87,13 @@ export const FloatingMenu = () => {
     };
     const onTouchMove = (e: TouchEvent) => {
       if (!isClicked.current) return;
+      const touchX = e.touches[0].clientX;
+      const moveToX =
         touchX -
         (wrapperCoords.current.xWhenDraggingStarted +
           wrapperCoords.current.xWhenDraggingStopped);
 
-      wrapper.style.left = `${nextX}px`;
+      wrapper.style.left = `${moveToX}px`;
     };
 
     wrapper.addEventListener("mousedown", onMouseDown);
