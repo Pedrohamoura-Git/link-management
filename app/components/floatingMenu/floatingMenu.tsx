@@ -106,6 +106,17 @@ export const FloatingMenu = () => {
         (wrapperCoords.current.xWhenDraggingStarted +
           wrapperCoords.current.xWhenDraggingStopped);
 
+      if (
+        !canElementBeDraggedAnyFurther({
+          element: arrowCenter,
+          lastPosition: wrapperCoords.current.lastX,
+          newPosition: moveToX,
+          direction: "left",
+        })
+      )
+        return;
+
+      wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
     };
 
