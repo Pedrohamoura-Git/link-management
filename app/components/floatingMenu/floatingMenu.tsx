@@ -60,12 +60,23 @@ export const FloatingMenu = () => {
      * * E armazena as coordenadas de finais de acordo com a posição atual do click
      *  */
     const onMouseMove = (e: MouseEvent) => {
-      console.log("onMouseMove");
       if (!isClicked.current) return;
-      const nextX =
-        e.clientX - wrapperCoords.current.startX + wrapperCoords.current.lastX;
+      const moveToX =
+        e.clientX -
+        wrapperCoords.current.xWhenDraggingStarted +
+        wrapperCoords.current.xWhenDraggingStopped;
 
-      wrapper.style.left = `${nextX}px`;
+      if (
+        !canElementBeDraggedAnyFurther({
+          element: arrowCenter,
+          lastPosition: wrapperCoords.current.lastX,
+          newPosition: moveToX,
+          direction: "left",
+        })
+      )
+        return;
+
+      wrapperCoords.current.lastX = moveToX;
     };
 
     /**
