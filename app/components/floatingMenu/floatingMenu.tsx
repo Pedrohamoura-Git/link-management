@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -11,6 +11,8 @@ import {
 import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 
 import { canElementBeDraggedAnyFurther } from "@@/utils";
+import { cn } from "@/lib/utils";
+
 import { DraggedFurtherProps } from "@/types";
 
 export const FloatingMenu = () => {
@@ -28,21 +30,19 @@ export const FloatingMenu = () => {
     lastX: 0,
   });
 
+  const arrowClassNames =
+    "absolute w-4 h-[0.1rem] bg-[#efefef] inline-block transition-all duration-[0.2s] ease-[ease] left-0";
+
+  const [toggleArrow, setToggleArrow] = useState(false);
+
   useEffect(() => {
     // Se o usuário não clicar no wrapper ou o body não existir, não faz nada
-    if (
-      !wrapperRef.current ||
-      !arrowRef.current ||
-      !arrowCenterRef.current ||
-      !window ||
-      !document.body
-    )
+    if (!wrapperRef.current || !arrowRef.current || !window || !document.body)
       return;
 
     // Seleciona o wrapper e o body
     const wrapper = wrapperRef.current;
     const arrow = arrowRef.current;
-    const arrowCenter = arrowCenterRef.current;
     const body = document.body;
 
     const reachedArrowLimit = ({
@@ -108,6 +108,7 @@ export const FloatingMenu = () => {
         return;
       }
 
+      setToggleArrow(true);
       wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
     };
@@ -154,6 +155,7 @@ export const FloatingMenu = () => {
         return;
       }
 
+      setToggleArrow(true);
       wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
     };
@@ -206,25 +208,20 @@ export const FloatingMenu = () => {
           </DropdownMenu>
         </Dropdown>
 
-        <i
-          ref={arrowRef}
-          className="flex items-center justify-center"
-          style={{
-            height: "25px",
-            width: "25px",
-            border: "solid red",
-            borderWidth: "0 3px 3px 0",
-            // display: "inline-block",
-            // padding: "3px",
-            transform: "rotate(-45deg)",
-            // -webkit-transform: rotate(-45deg),
-          }}
-        >
-          <div
-            ref={arrowCenterRef}
-            className="w-1 h-1 border border-green-300"
-          ></div>
-        </i>
+        <div className="relative w-5 h-5 mx-4 my-0" ref={arrowRef}>
+          <span
+            className={cn(
+              `${arrowClassNames} top-1 rotate-45`,
+              toggleArrow ? "-rotate-45" : ""
+            )}
+          ></span>
+          <span
+            className={cn(
+              `${arrowClassNames} bottom-1 -rotate-45`,
+              toggleArrow ? "rotate-45" : ""
+            )}
+          ></span>
+        </div>
       </div>
     </div>
   );
