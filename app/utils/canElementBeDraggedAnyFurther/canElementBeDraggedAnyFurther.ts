@@ -1,11 +1,5 @@
+import { DraggedFurtherProps } from "@/types";
 import { isElementTouchingEdges } from "../isElementTouchingEdges";
-
-interface DraggedFurtherProps {
-  element: HTMLElement;
-  lastPosition: number;
-  newPosition: number;
-  direction: "top" | "bottom" | "left" | "right";
-}
 
 export const canElementBeDraggedAnyFurther = ({
   element,

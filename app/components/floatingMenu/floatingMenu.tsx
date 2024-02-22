@@ -11,6 +11,7 @@ import {
 import { ThemeSwitcher, LocaleSwitcher } from "../widgets";
 
 import { canElementBeDraggedAnyFurther } from "@@/utils";
+import { DraggedFurtherProps } from "@/types";
 
 export const FloatingMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
