@@ -103,8 +103,8 @@ export const FloatingMenu = () => {
       const touchX = e.touches[0].clientX;
       const moveToX =
         touchX -
-        (wrapperCoords.current.xWhenDraggingStarted +
-          wrapperCoords.current.xWhenDraggingStopped);
+        wrapperCoords.current.xWhenDraggingStarted +
+        wrapperCoords.current.xWhenDraggingStopped;
 
       if (
         !canElementBeDraggedAnyFurther({
