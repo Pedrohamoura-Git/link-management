@@ -44,6 +44,33 @@ export const FloatingMenu = () => {
     const arrowCenter = arrowCenterRef.current;
     const body = document.body;
 
+    const reachedArrowLimit = ({
+      element,
+      lastPosition,
+      newPosition,
+      direction,
+    }: DraggedFurtherProps) => {
+      const resp = !canElementBeDraggedAnyFurther({
+        element,
+        lastPosition,
+        newPosition,
+        direction,
+      });
+      if (resp) setToggleArrow(false);
+      return resp;
+    };
+
+    type reachedWrapperLimitProps = {
+      offsetLeft: number;
+      moveToX: number;
+    };
+    const reachedWrapperLimit = ({
+      offsetLeft,
+      moveToX,
+    }: reachedWrapperLimitProps) => {
+      return offsetLeft > 0 && moveToX > 0;
+    };
+
     /**
      * * Em desktops, se o usuário clicar, define o isClicked como true
      * * E armazena as coordenadas de inicio de acordo com a posição atual do click
@@ -66,15 +93,19 @@ export const FloatingMenu = () => {
         wrapperCoords.current.xWhenDraggingStopped;
 
       if (
-        !canElementBeDraggedAnyFurther({
-          element: arrowCenter,
+        reachedArrowLimit({
+          element: arrow,
           lastPosition: wrapperCoords.current.lastX,
           newPosition: moveToX,
           direction: "left",
         }) ||
-        (wrapper.offsetLeft > 0 && moveToX > 0)
-      )
+        reachedWrapperLimit({
+          offsetLeft: wrapper.offsetLeft,
+          moveToX,
+        })
+      ) {
         return;
+      }
 
       wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
@@ -108,15 +139,19 @@ export const FloatingMenu = () => {
         wrapperCoords.current.xWhenDraggingStopped;
 
       if (
-        !canElementBeDraggedAnyFurther({
-          element: arrowCenter,
+        reachedArrowLimit({
+          element: arrow,
           lastPosition: wrapperCoords.current.lastX,
           newPosition: moveToX,
           direction: "left",
         }) ||
-        (wrapper.offsetLeft > 0 && moveToX > 0)
-      )
+        reachedWrapperLimit({
+          offsetLeft: wrapper.offsetLeft,
+          moveToX,
+        })
+      ) {
         return;
+      }
 
       wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
