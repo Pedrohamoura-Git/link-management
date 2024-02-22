@@ -71,7 +71,8 @@ export const FloatingMenu = () => {
           lastPosition: wrapperCoords.current.lastX,
           newPosition: moveToX,
           direction: "left",
-        })
+        }) ||
+        (wrapper.offsetLeft > 0 && moveToX > 0)
       )
         return;
 
@@ -112,7 +113,8 @@ export const FloatingMenu = () => {
           lastPosition: wrapperCoords.current.lastX,
           newPosition: moveToX,
           direction: "left",
-        })
+        }) ||
+        (wrapper.offsetLeft > 0 && moveToX > 0)
       )
         return;
 
