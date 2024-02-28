@@ -31,7 +31,7 @@ export const FloatingMenu = () => {
   });
 
   const arrowClassNames =
-    "absolute w-4 h-[0.1rem] bg-[#efefef] inline-block transition-all duration-[0.2s] ease-[ease] left-0";
+    "absolute w-4 h-[0.1rem] bg-foreground inline-block transition-all duration-[0.2s] ease-[ease] left-0";
 
   const [toggleArrow, setToggleArrow] = useState(false);
 
@@ -185,17 +185,19 @@ export const FloatingMenu = () => {
 
   return (
     <div
-      className="fixed left-0 z-10 hover:cursor-pointer bottom-unit-5xl"
+      className="fixed left-0 z-10 p-2 border rounded-md hover:cursor-pointer bottom-unit-3xl bg-background-glassy backdrop-blur-md"
       ref={wrapperRef}
     >
-      <div className="flex items-center">
+      <div className="flex items-center gap-3">
         <Dropdown
           backdrop="blur"
           className="border bg-background border-border"
           closeOnSelect={false}
         >
           <DropdownTrigger>
-            <Button variant="bordered">Open Menu</Button>
+            <Button variant="bordered" className="bg-background">
+              Open Menu
+            </Button>
           </DropdownTrigger>
 
           <DropdownMenu variant="faded" aria-label="Static Actions">
@@ -208,7 +210,7 @@ export const FloatingMenu = () => {
           </DropdownMenu>
         </Dropdown>
 
-        <div className="relative w-5 h-5 mx-4 my-0" ref={arrowRef}>
+        <div className="relative w-5 h-5 my-0 ml-4" ref={arrowRef}>
           <span
             className={cn(
               `${arrowClassNames} top-1 rotate-45`,
