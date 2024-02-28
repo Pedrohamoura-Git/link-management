@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",
+        'background-glassy': "hsl(var(--background) / var(--transparency))",
         foreground: "hsl(var(--foreground))",
       },
       borderRadius: {
