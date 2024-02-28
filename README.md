@@ -58,6 +58,7 @@ _OBS: THE IMAGES MAY NOT BE IN THE SAME SCALE._
 - <a href="https://www.youtube.com/watch?v=gpJKj45AikY" alt="Youtube video: Next.js Image Optimization with Image Component" target="_blank">Next.js Image Optimization with Image Component</a>
 - <a href="https://ausi.github.io/respimagelint/" alt="A link to a image formater for NextJs" target="_blank">RespImageLint - Linter for Responsive Images</a>
 - <a href="https://next-intl-docs.vercel.app/docs/environments/server-client-components" alt="A link to next-intl documentation explaning how to better use translations on client and server components" target="_blank">Internationalization of Server & Client Components</a>
+- <a href="https://tailwindcss.com/docs/customizing-colors#adding-additional-colors" alt="A link to next-intl documentation explaning how to modify tailwind theming" target="_blank">Customizing Colors</a>
 
 </details>
 
