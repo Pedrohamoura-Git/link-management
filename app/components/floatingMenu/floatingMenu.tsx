@@ -155,7 +155,7 @@ export const FloatingMenu = () => {
         return;
       }
 
-      setToggleArrow(true);
+      !toggleArrow && setToggleArrow(true);
       wrapperCoords.current.lastX = moveToX;
       wrapper.style.left = `${moveToX}px`;
     };
