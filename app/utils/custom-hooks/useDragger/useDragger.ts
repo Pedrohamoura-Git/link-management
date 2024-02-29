@@ -38,6 +38,31 @@ type useDraggerProps = {
   mouseMoveCallback: (value: any) => void;
   touchMoveCallback: (value: any) => void;
 };
+
+export const useDragger = ({
+  element,
+  innerElement,
+  checkInnerElementLimit,
+  mouseMoveCallback,
+  touchMoveCallback,
+}: useDraggerProps) => {
+  const [isClicked, setIsClicked] = useState(false);
+  const elementCoords = useRef<{
+    xWhenDraggingStarted: number;
+    xWhenDraggingStopped: number;
+    lastX: number;
+  }>({
+    xWhenDraggingStarted: 0,
+    xWhenDraggingStopped: 0,
+    lastX: 0,
+  });
+
+  useEffect(() => {
+    console.log("!!element: ", !!element);
+    // if (element === null) throw new Error("Element must be provided");
+    if (element === null || !window || !document.body) return;
+
+    const body = document.body;
     /**
      * * Em desktops, se o usuário clicar, define o isClicked como true
      * * E armazena as coordenadas de inicio de acordo com a posição atual do click
@@ -138,5 +163,12 @@ type useDraggerProps = {
       body.addEventListener("touchmove", onTouchMove);
     };
     return cleanUp;
-  }, []);
+  }, [
+    isClicked,
+    element,
+    innerElement,
+    checkInnerElementLimit,
+    mouseMoveCallback,
+    touchMoveCallback,
+  ]);
 };
