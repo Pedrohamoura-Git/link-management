@@ -63,20 +63,12 @@ export const useDragger = ({
     if (element === null || !window || !document.body) return;
 
     const body = document.body;
-    /**
-     * * Em desktops, se o usuário clicar, define o isClicked como true
-     * * E armazena as coordenadas de inicio de acordo com a posição atual do click
-     *  */
+
     const onMouseDown = (e: MouseEvent) => {
       setIsClicked(true);
       elementCoords.current.xWhenDraggingStarted = e.clientX;
     };
-    /**
-     * * Em desktops, enquanto o usuário mantêm o click, verifica se ele está clicando no element
-     * * E armazena as coordenadas de finais de acordo com a posição atual do click
-     *  */
-    // Todo: (V) => Quando fechado, definir o dragging máximo para o lado esquerdo da flecha
-    // Todo: (V) => Quando aberto, definir o dragging máximo para o lado esquerdo do botão
+
     const onMouseMove = (e: MouseEvent) => {
       if (!isClicked) return;
       const moveToX =
@@ -104,10 +96,7 @@ export const useDragger = ({
       elementCoords.current.lastX = moveToX;
       element.style.left = `${moveToX}px`;
     };
-    /**
-     * * Em desktops, quando o usuário terminda de clicar, define o isClicked como false
-     * * E armazena as coordenadas de finais de acordo com a posição atual do click
-     *  */
+
     const onMouseUp = (e: MouseEvent) => {
       setIsClicked(false);
       elementCoords.current.xWhenDraggingStopped = element.offsetLeft;
