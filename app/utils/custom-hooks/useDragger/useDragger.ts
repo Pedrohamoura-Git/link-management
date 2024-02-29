@@ -42,7 +42,7 @@ export const useDragger = ({ element }: useDraggerProps) => {
      * * E armazena as coordenadas de inicio de acordo com a posição atual do click
      *  */
     const onMouseDown = (e: MouseEvent) => {
-      isClicked.current = true;
+      setIsClicked(true);
       elementCoords.current.xWhenDraggingStarted = e.clientX;
     };
     /**
@@ -52,7 +52,7 @@ export const useDragger = ({ element }: useDraggerProps) => {
     // Todo: (V) => Quando fechado, definir o dragging máximo para o lado esquerdo da flecha
     // Todo: (V) => Quando aberto, definir o dragging máximo para o lado esquerdo do botão
     const onMouseMove = (e: MouseEvent) => {
-      if (!isClicked.current) return;
+      if (!isClicked) return;
       const moveToX =
         e.clientX -
         elementCoords.current.xWhenDraggingStarted +
@@ -80,19 +80,19 @@ export const useDragger = ({ element }: useDraggerProps) => {
      * * E armazena as coordenadas de finais de acordo com a posição atual do click
      *  */
     const onMouseUp = (e: MouseEvent) => {
-      isClicked.current = false;
+      setIsClicked(false);
       elementCoords.current.xWhenDraggingStopped = element.offsetLeft;
     };
     const onTouchstart = (e: TouchEvent) => {
-      isClicked.current = true;
+      setIsClicked(true);
       elementCoords.current.xWhenDraggingStarted = e.touches[0].clientX;
     };
     const onTouchend = (e: TouchEvent) => {
-      isClicked.current = false;
+      setIsClicked(false);
       elementCoords.current.xWhenDraggingStopped = element.offsetLeft;
     };
     const onTouchMove = (e: TouchEvent) => {
-      if (!isClicked.current) return;
+      if (!isClicked) return;
       const touchX = e.touches[0].clientX;
       const moveToX =
         touchX -
