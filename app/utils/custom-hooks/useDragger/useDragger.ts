@@ -1,42 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
+import { canElementBeDraggedAnyFurther } from "@@/utils";
+import { DraggedFurtherProps } from "@/types";
+
+const reachedInnerElementLimit = ({
+  element,
+  lastPosition,
+  newPosition,
+  direction,
+  callback,
+}: DraggedFurtherProps) => {
+  const reachedLimit = !canElementBeDraggedAnyFurther({
+    element,
+    lastPosition,
+    newPosition,
+    direction,
+  });
+  if (reachedLimit && callback) {
+    callback(reachedLimit);
+  }
+  return reachedLimit;
+};
+type reachedElementLimitProps = {
+  offsetLeft: number;
+  moveToX: number;
+};
+const reachedElementLimit = ({
+  offsetLeft,
+  moveToX,
+}: reachedElementLimitProps) => {
+  return offsetLeft > 0 && moveToX > 0;
+};
 
 type useDraggerProps = {
   element: HTMLDivElement | null;
+  innerElement: HTMLDivElement | null;
+  checkInnerElementLimit: boolean;
+  mouseMoveCallback: (value: any) => void;
+  touchMoveCallback: (value: any) => void;
 };
-
-export const useDragger = ({ element }: useDraggerProps) => {
-  useEffect(() => {
-    if (!element) throw new Error("Element must be provided");
-    if (!window || !document.body) return;
-    // Seleciona o element e o body
-    const element = element.current;
-    const arrow = arrowRef.current;
-    const body = document.body;
-    const reachedArrowLimit = ({
-      element,
-      lastPosition,
-      newPosition,
-      direction,
-    }: DraggedFurtherProps) => {
-      const reachedLimit = !canElementBeDraggedAnyFurther({
-        element,
-        lastPosition,
-        newPosition,
-        direction,
-      });
-      if (reachedLimit) setToggleArrow(false);
-      return reachedLimit;
-    };
-    type reachedElementLimitProps = {
-      offsetLeft: number;
-      moveToX: number;
-    };
-    const reachedElementLimit = ({
-      offsetLeft,
-      moveToX,
-    }: reachedElementLimitProps) => {
-      return offsetLeft > 0 && moveToX > 0;
-    };
     /**
      * * Em desktops, se o usuário clicar, define o isClicked como true
      * * E armazena as coordenadas de inicio de acordo com a posição atual do click
@@ -58,12 +59,14 @@ export const useDragger = ({ element }: useDraggerProps) => {
         elementCoords.current.xWhenDraggingStarted +
         elementCoords.current.xWhenDraggingStopped;
       if (
-        reachedArrowLimit({
-          element: arrow,
-          lastPosition: elementCoords.current.lastX,
-          newPosition: moveToX,
-          direction: "left",
-        }) ||
+        (checkInnerElementLimit &&
+          innerElement &&
+          reachedInnerElementLimit({
+            element: innerElement,
+            lastPosition: elementCoords.current.lastX,
+            newPosition: moveToX,
+            direction: "left",
+          })) ||
         reachedElementLimit({
           offsetLeft: element.offsetLeft,
           moveToX,
@@ -99,12 +102,14 @@ export const useDragger = ({ element }: useDraggerProps) => {
         elementCoords.current.xWhenDraggingStarted +
         elementCoords.current.xWhenDraggingStopped;
       if (
-        reachedArrowLimit({
-          element: arrow,
-          lastPosition: elementCoords.current.lastX,
-          newPosition: moveToX,
-          direction: "left",
-        }) ||
+        (checkInnerElementLimit &&
+          innerElement &&
+          reachedInnerElementLimit({
+            element: innerElement,
+            lastPosition: elementCoords.current.lastX,
+            newPosition: moveToX,
+            direction: "left",
+          })) ||
         reachedElementLimit({
           offsetLeft: element.offsetLeft,
           moveToX,
