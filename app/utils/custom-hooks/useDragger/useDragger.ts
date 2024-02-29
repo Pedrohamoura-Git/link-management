@@ -35,8 +35,8 @@ type useDraggerProps = {
   element: HTMLDivElement | null;
   innerElement: HTMLDivElement | null;
   checkInnerElementLimit: boolean;
-  mouseMoveCallback: (value: any) => void;
-  touchMoveCallback: (value: any) => void;
+  mouseMoveCallback: (value: number) => void;
+  touchMoveCallback: (value: number) => void;
 };
 
 export const useDragger = ({

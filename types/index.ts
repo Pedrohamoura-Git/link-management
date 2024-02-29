@@ -9,4 +9,5 @@ export interface DraggedFurtherProps {
   lastPosition: number;
   newPosition: number;
   direction: "top" | "bottom" | "left" | "right";
+  callback?: (data: boolean) => void;
 }
