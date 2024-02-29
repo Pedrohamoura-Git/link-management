@@ -99,7 +99,8 @@ export const useDragger = ({
       ) {
         return;
       }
-      setToggleArrow(true);
+
+      mouseMoveCallback(moveToX);
       elementCoords.current.lastX = moveToX;
       element.style.left = `${moveToX}px`;
     };
@@ -142,10 +143,11 @@ export const useDragger = ({
       ) {
         return;
       }
-      !toggleArrow && setToggleArrow(true);
+      touchMoveCallback(moveToX);
       elementCoords.current.lastX = moveToX;
       element.style.left = `${moveToX}px`;
     };
+
     element.addEventListener("mousedown", onMouseDown);
     element.addEventListener("mouseup", onMouseUp);
     body.addEventListener("mousemove", onMouseMove);
@@ -153,6 +155,7 @@ export const useDragger = ({
     element.addEventListener("touchstart", onTouchstart);
     element.addEventListener("touchend", onTouchend);
     body.addEventListener("touchmove", onTouchMove);
+
     const cleanUp = () => {
       element.removeEventListener("mousedown", onMouseDown);
       element.removeEventListener("mouseup", onMouseUp);
