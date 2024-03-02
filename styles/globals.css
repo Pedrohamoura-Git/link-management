@@ -64,6 +64,8 @@
     --border: 215.4 16.3% 46.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+
+    --radius: 0.5rem;
     --transparency: 0.5;
   }
 }
@@ -71,6 +73,7 @@
 @layer base {
   * {
     @apply border-border;
+    user-select: none;
   }
   body {
     @apply bg-background text-foreground;

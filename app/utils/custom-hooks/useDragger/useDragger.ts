@@ -15,7 +15,11 @@ const reachedInnerElementLimit = ({
     newPosition,
     direction,
   });
-  if (reachedLimit && callback) {
+  console.log(
+    // `reachedLimit[${reachedLimit}] && !!callback[${!!callback}]: `,
+    reachedLimit && !!callback
+  );
+  if (reachedLimit && !!callback) {
     callback(reachedLimit);
   }
   return reachedLimit;
@@ -35,8 +39,9 @@ type useDraggerProps = {
   element: HTMLDivElement | null;
   innerElement: HTMLDivElement | null;
   checkInnerElementLimit: boolean;
-  mouseMoveCallback: (value: number) => void;
-  touchMoveCallback: (value: number) => void;
+  mouseMoveCallback?: (value: number) => void;
+  touchMoveCallback?: (value: number) => void;
+  innerElementLimitCallback?: (value: boolean) => void;
 };
 
 export const useDragger = ({
@@ -45,6 +50,7 @@ export const useDragger = ({
   checkInnerElementLimit,
   mouseMoveCallback,
   touchMoveCallback,
+  innerElementLimitCallback,
 }: useDraggerProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const elementCoords = useRef<{
@@ -83,6 +89,7 @@ export const useDragger = ({
             lastPosition: elementCoords.current.lastX,
             newPosition: moveToX,
             direction: "left",
+            callback: () => innerElementLimitCallback,
           })) ||
         reachedElementLimit({
           offsetLeft: element.offsetLeft,
@@ -92,7 +99,7 @@ export const useDragger = ({
         return;
       }
 
-      mouseMoveCallback(moveToX);
+      mouseMoveCallback && mouseMoveCallback(moveToX);
       elementCoords.current.lastX = moveToX;
       element.style.left = `${moveToX}px`;
     };
@@ -124,6 +131,13 @@ export const useDragger = ({
             lastPosition: elementCoords.current.lastX,
             newPosition: moveToX,
             direction: "left",
+            callback: (e) => {
+              console.log("e: ", e);
+              // Find a way to activate this function so the setToggle in the parent component
+              // can also be called
+              // Replicate this code on onMouseMove
+              () => innerElementLimitCallback;
+            },
           })) ||
         reachedElementLimit({
           offsetLeft: element.offsetLeft,
@@ -132,7 +146,8 @@ export const useDragger = ({
       ) {
         return;
       }
-      touchMoveCallback(moveToX);
+
+      touchMoveCallback && touchMoveCallback(moveToX);
       elementCoords.current.lastX = moveToX;
       element.style.left = `${moveToX}px`;
     };
@@ -162,5 +177,6 @@ export const useDragger = ({
     checkInnerElementLimit,
     mouseMoveCallback,
     touchMoveCallback,
+    innerElementLimitCallback,
   ]);
 };
