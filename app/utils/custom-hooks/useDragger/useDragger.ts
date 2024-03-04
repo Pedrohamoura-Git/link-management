@@ -132,11 +132,7 @@ export const useDragger = ({
             newPosition: moveToX,
             direction: "left",
             callback: (e) => {
-              console.log("e: ", e);
-              // Find a way to activate this function so the setToggle in the parent component
-              // can also be called
-              // Replicate this code on onMouseMove
-              () => innerElementLimitCallback;
+              !!innerElementLimitCallback && innerElementLimitCallback();
             },
           })) ||
         reachedElementLimit({
